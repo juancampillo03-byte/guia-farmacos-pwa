@@ -1,0 +1,16 @@
+{
+  "name": "Guía Fármacos Hospital",
+  "short_name": "Guía Farmacia",
+  "description": "Protocolos de Administración Parenteral (Hospital Marina Baixa)",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#f0f4f7",
+  "theme_color": "#007bff",
+  "icons": [
+    {
+      "src": "/icono-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

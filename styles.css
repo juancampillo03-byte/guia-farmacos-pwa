@@ -1,0 +1,238 @@
+/* -------------------------------------- */
+/* 1. ESTILOS BASE Y TIPOGRAFÍA           */
+/* -------------------------------------- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Tipografía limpia */
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Fondo muy claro */
+    color: #343a40; /* Texto oscuro para alto contraste */
+}
+
+header {
+    background-color: #007bff; /* Azul primario */
+    color: white;
+    padding: 20px 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+main {
+    padding: 20px;
+}
+
+/* -------------------------------------- */
+/* 2. ESTILOS DE BÚSQUEDA Y RESULTADOS    */
+/* -------------------------------------- */
+.search-container {
+    margin-bottom: 15px;
+}
+
+#search-input {
+    width: 100%;
+    padding: 12px 10px;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    font-size: 1em;
+    box-sizing: border-box; 
+    transition: border-color 0.3s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+#search-input:focus {
+    border-color: #0056b3;
+    outline: none;
+    box-shadow: 0 1px 6px rgba(0, 123, 255, 0.3);
+}
+
+.selector-farma {
+    display: none; 
+}
+
+/* Estilos para los botones de resultados de búsqueda (Nueva Usabilidad) */
+.results-container {
+    margin-bottom: 20px;
+    padding-top: 5px;
+}
+
+.result-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 8px;
+    border: none;
+    border-radius: 8px;
+    background-color: #eaf3ff; /* Fondo azul claro */
+    color: #0056b3; /* Texto azul oscuro */
+    font-size: 1.1em;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.result-button:hover, .result-button:focus {
+    background-color: #d1e0ff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    outline: none;
+}
+
+
+/* -------------------------------------- */
+/* 3. ESTILOS DE FICHA Y SECCIONES        */
+/* -------------------------------------- */
+.ficha {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra más suave y moderna */
+}
+
+.ficha h2 {
+    color: #007bff;
+    border-bottom: 2px solid #dee2e6; /* Línea de separación suave */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+/* Títulos de sección (ej. Reconstitución) */
+h3 {
+    color: #343a40; 
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 1.15em;
+    font-weight: 600;
+}
+
+/* Sección de Reconstitución/Estabilidad (Alerta amarilla) */
+.seccion-reconstitución {
+    border-left: 4px solid #ffc107; 
+    padding: 10px 10px 10px 15px; /* Más padding para el contenido */
+    margin-bottom: 20px;
+    background-color: #fff9e6;
+    border-radius: 4px;
+}
+
+.seccion-reconstitución p {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+/* Controles de dosis (Desplegable de protocolo interno - Oculto) */
+.control-dosis {
+    display: none; /* Ya no es necesario el control-dosis, las vías salen de golpe */
+}
+
+
+/* -------------------------------------- */
+/* 4. ESTILOS DE PROTOCOLO SIMULTÁNEO     */
+/* -------------------------------------- */
+
+/* Contenedor de cada vía de administración */
+.protocolo-box {
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Etiqueta de la vía */
+.protocolo-box h3 {
+    font-size: 1em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #343a40;
+    font-weight: 700;
+}
+
+/* Estilo para Protocolo Válido (Verde) */
+.protocolo-box:not(.invalido):not(.critico) {
+    border-left: 5px solid #28a745; 
+    background-color: #e9f7ef;
+}
+
+/* Estilo para Vías CRÍTICAS (Ej: Adenosina Bolo Rápido, Vancomicina en Restricción Líquidos) */
+.protocolo-box.critico {
+    border-left: 5px solid #ff4500; /* Rojo/Naranja vivo para alerta máxima */
+    background-color: #fff0e6;
+}
+
+.protocolo-box.critico h3 {
+    color: #ff4500;
+}
+
+/* Estilo para Protocolo Inválido (Rojo - Alerta de Seguridad X) */
+.protocolo-box.invalido {
+    border-left: 5px solid #dc3545; 
+    background-color: #f8d7da; 
+}
+
+.protocolo-box.invalido h3 {
+    color: #721c24; 
+}
+
+/* Etiqueta de validez de la vía */
+.validity-tag {
+    font-size: 0.8em;
+    font-weight: 700;
+    margin-left: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    color: #555;
+}
+
+/* Estilo para notas de riesgo/seguridad dentro del protocolo */
+.protocolo-content .nota {
+    font-weight: 600;
+    color: #dc3545;
+    margin-top: 10px;
+    padding-top: 5px;
+    border-top: 1px dashed #f5c6cb;
+}
+
+.protocolo-box p, .protocolo-box ul {
+    margin: 0 0 10px 0;
+    line-height: 1.4;
+}
+
+/* -------------------------------------- */
+/* 5. ESTILOS DEL ÍNDICE ALFABÉTICO       */
+/* -------------------------------------- */
+.alphabet-index {
+    display: flex;
+    flex-wrap: wrap; /* Para que salten de línea en pantallas pequeñas */
+    justify-content: center;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    background-color: #f0f4f7;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.index-button {
+    background: none;
+    border: none;
+    color: #007bff;
+    font-weight: 700;
+    font-size: 0.9em;
+    padding: 5px 8px;
+    margin: 2px 1px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.index-button:hover, .index-button.active {
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+}
