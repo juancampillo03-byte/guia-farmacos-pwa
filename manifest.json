@@ -1,8 +1,8 @@
 {
-  "name": "Guía Fármacos Hospital",
+  "name": "Guía de Administración de Fármacos Vía Parenteral",
   "short_name": "Guía Farmacia",
   "description": "Protocolos de Administración Parenteral (Hospital Marina Baixa)",
-  "start_url": "/index.html",
+  "start_url": "https://juancampillo03-byte.github.io/guia-farmacos-pwa/index.html", // RUTA ABSOLUTA
   "display": "standalone",
   "background_color": "#f0f4f7",
   "theme_color": "#007bff",
