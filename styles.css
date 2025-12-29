@@ -9,7 +9,7 @@ body {
 header {
     background-color: #007bff;
     color: white;
-    padding: 20px 10px; /* Un poco más de espacio vertical */
+    padding: 20px 10px;
     display: flex;
     align-items: center;
     position: sticky;
@@ -21,14 +21,14 @@ header {
 .logo-container {
     flex-grow: 1;
     text-align: center;
-    padding-right: 30px; /* Equilibra el espacio ocupado por el icono del menú */
+    padding-right: 30px;
 }
 
 header h1 { 
     margin: 0; 
-    font-size: 1.15em; /* Tamaño equilibrado para un título tan largo */
-    font-weight: 800;   /* Máximo grosor para mayor impacto */
-    line-height: 1.2;
+    font-size: 1.15em; 
+    font-weight: 800; 
+    line-height: 1.1; /* Ajustado para las 3 líneas */
     text-transform: uppercase;
     letter-spacing: -0.2px;
 }
@@ -38,13 +38,13 @@ header h2 {
     font-size: 0.85em; 
     font-weight: 400; 
     opacity: 0.9;
-    line-height: 1.2; /* Espaciado entre Servicio y Hospital */
+    line-height: 1.2; 
     letter-spacing: 0.2px;
 }
 
-/* 2. MENÚ LATERAL (Corrección de visibilidad) */
+/* 2. MENÚ LATERAL */
 .side-nav {
-    height: 100%; width: 0; /* Oculto por defecto */
+    height: 100%; width: 0;
     position: fixed; z-index: 2000;
     top: 0; left: 0;
     background-color: #1a1a1a;
@@ -104,3 +104,34 @@ main { padding: 15px; }
 }
 .abr-sigla { color: #007bff; font-weight: bold; width: 80px; flex-shrink: 0; }
 .abr-significado { color: #555; font-size: 0.95em; }
+
+/* 5. BLOQUES DE PROTOCOLO (Restauración de Colores) */
+.protocolo-box { 
+    padding: 18px; 
+    border-radius: 10px; 
+    margin-bottom: 15px; 
+    border-left: 6px solid #ccc; 
+    background: #f8f9fa; 
+}
+.protocolo-box h3 { margin: 0 0 10px 0; font-size: 1.2em; }
+
+.protocolo-box.verde, .protocolo-box.valido { 
+    border-left-color: #40c057; 
+    background-color: #f1fdf3 !important; 
+}
+.protocolo-box.critico, .protocolo-box.atencion { 
+    border-left-color: #fa5252; 
+    background-color: #fff5f5 !important; 
+}
+.protocolo-box.invalido, .protocolo-box.precaucion { 
+    border-left-color: #fcc419; 
+    background-color: #fff9db !important; 
+}
+
+.seccion-reconstitución { 
+    background: #fff9db; 
+    padding: 15px; 
+    border-left: 6px solid #fcc419; 
+    margin: 20px 0;
+    border-radius: 8px;
+}
