@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         ficha.innerHTML = `
             <h2>Formas Parenterales por Vía Oral</h2>
-            <p style="font-size:0.85em; color:gray; text-align:center; margin-bottom:15px;">Presentaciones parenterales bebibles</p>
+            <p style="font-size:0.85em; color:gray; text-align:center; margin-bottom:15px;">Presentaciones parenterales que pueden administrarse por vía oral (bebibles)</p>
             
             <div class="lista-vo-container">
                 <div class="tarjeta-vo"><div class="nombre-farmaco">Acetilcisteína</div><div class="dosis-presentacion">amp 300 mg/3mL</div></div>
