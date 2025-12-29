@@ -268,5 +268,266 @@ const drugData = {
             { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Metahemoglobinemia: 1-2 mg/Kg en 50-100 mL SG5% en 5-15 min.</p>' },
             { label: 'IV continua', validity: '✓', class: '', content: '<p>Cirugía paratiroides: 5 mg/Kg en 500 mL SG5% 1 h antes intervención.</p>' }
         ]
+    },
+    'betametasona': {
+        name: 'BETAMETASONA ACETATO/FOSFATO',
+        reconstitution: {
+            presentation: 'Celestone Cronodose® vial 12 mg/2 mL (6 mg fosfato + 6 mg acetato)',
+            method: 'No procede. Agitar antes de usar.',
+            stability: 'No procede.'
+        },
+        protocols: [
+            { label: 'Intramuscular', validity: '✓', class: '', content: '<p>Vía profunda en glúteo para evitar atrofia tisular local. No utilizar si hay aglomeración o precipitación.</p>' }
+        ]
+    },
+    'bicarbonato-1-6m': {
+        name: 'BICARBONATO SÓDICO 1/6 M (1,4%)',
+        reconstitution: { presentation: 'Frasco 500 mL (0,167 mEq/mL)', method: 'No procede', stability: 'Uso inmediato tras abrir.' },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Administrar lentamente. Velocidad según prescripción médica.</p>' },
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Administrar directamente sin diluir.</p>' },
+            { label: 'IV continua', validity: '✓', class: '', content: '<p>Administrar directamente sin diluir.</p>' }
+        ]
+    },
+    'bicarbonato-1m': {
+        name: 'BICARBONATO SÓDICO 1 M (8,4%)',
+        reconstitution: { presentation: 'Vial 10 mL y Frasco 250 mL (1 mEq/mL)', method: 'No procede', stability: 'Uso inmediato tras abrir.' },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Administrar lentamente. Riesgo de alcalosis si la administración es rápida.</p>' },
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Se puede administrar directo o diluir hasta isotonicidad (1,5%) en API, SF o SG5% (aprox. 50 mL disolvente por cada 10 mL).</p>' }
+        ]
+    },
+    'biperideno': {
+        name: 'BIPERIDENO',
+        reconstitution: { presentation: 'Akineton® ampolla 5 mg/1 mL', method: 'No procede', stability: 'Proteger de la luz.' },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Administrar lentamente en al menos 2 minutos.</p>' },
+            { label: 'Intramuscular', validity: '✓', class: '', content: '<p>Vía de administración válida.</p>' }
+        ]
+    },
+    'bupivacaina': {
+        name: 'BUPIVACAÍNA',
+        reconstitution: { presentation: 'Bupivacaína 0,5% EFG ampolla 50 mg/10 mL', method: 'No procede', stability: 'No procede.' },
+        protocols: [
+            { label: 'Intramuscular', validity: '✓', class: '', content: '<p>Inyectar lentamente con varias aspiraciones en dos planos. Usar la dosis más baja posible.</p>' },
+            { label: 'Subcutánea', validity: '✓', class: '', content: '<p>Vía de administración válida.</p>' }
+        ]
+    },
+    'butilescopolamina': {
+        name: 'BUTILESCOPOLAMINA, BROMURO',
+        reconstitution: { presentation: 'Butilescopolamina EFG ampolla 20 mg/mL', method: 'No procede', stability: 'No procede.' },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Administrar lentamente (velocidad de 1 mL/min).</p>' },
+            { label: 'Intramuscular', validity: '✓', class: '', content: '<p>Vía de administración válida.</p>' },
+            { label: 'Subcutánea', validity: '✓', class: '', content: '<p>Vía de administración válida.</p>' }
+        ]
+    },
+    'butilescopolamina-metamizol': {
+        name: 'BUTILESCOPOLAMINA BROMURO / METAMIZOL',
+        reconstitution: { presentation: 'Buscapina Compositum® amp 5 mL (20mg/2,5g)', method: 'No procede', stability: 'No procede.' },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Muy lento (mín. 5 min) con paciente en decúbito supino. Riesgo de hipotensión grave.</p>' },
+            { label: 'Intramuscular', validity: '✓', class: '', content: '<p>Vía profunda en cuadrante superior externo de la nalga, orientada hacia cresta ilíaca.</p>' }
+        ]
+    },
+    'calcio-cloruro': {
+        name: 'CALCIO CLORURO',
+        reconstitution: { presentation: 'Calcio cloruro EFG amp 1 g/10 mL (9,13 mEq Ca2+)', method: 'No procede', stability: 'Uso inmediato.' },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: 'critico', content: '<p>Solo en hipocalcemia aguda. Muy lento (máx 1 mL/min). Muy irritante: riesgo de necrosis y calcificación.</p>' },
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Diluir en 100 mL de SF o SG5%. Administrar en 10-15 min.</p>' },
+            { label: 'IV continua', validity: '✓', class: '', content: '<p>Diluir en 500-1.000 mL de SF o SG5%. Administrar en 24 horas.</p>' }
+        ]
+    },
+    'calcio-gluconato': {
+        name: 'CALCIO, GLUCONATO',
+        reconstitution: { presentation: 'Suplecal Mini-Plasco® amp 10 mL (4,6 mEq Ca2+)', method: 'No procede', stability: 'Diluido: 24 h en nevera.' },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: 'critico', content: '<p>Lento (máx 2 mL/min). Una administración rápida causa vasodilatación, arritmias y paro cardíaco. Muy irritante.</p>' },
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Diluir en 100 mL de SF o SG5%. Administrar en 15-30 min.</p>' },
+            { label: 'IV continua', validity: '✓', class: '', content: '<p>Diluir en 500-1.000 mL de SF o SG5% en 24h. Máx 36 horas de perfusión.</p>' }
+        ]
+    },
+    'carbetocina': {
+        name: 'CARBETOCINA',
+        reconstitution: { presentation: 'Duratobal® vial 100 mcg/1 mL', method: 'No procede', stability: 'No procede.' },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Lento (mín. 1 min) tras la extracción del niño y preferiblemente antes de la placenta.</p>' }
+        ]
+    },
+    'carboprost': {
+        name: 'CARBOPROST',
+        reconstitution: { presentation: 'Hemabate® amp 250 mcg/1 mL', method: 'No procede', stability: 'No procede.' },
+        protocols: [
+            { label: 'Intramuscular', validity: '✓', class: '', content: '<p>Administrar vía IM profunda.</p>' }
+        ]
+    },
+    'caspofungina': {
+        name: 'CASPOFUNGINA',
+        reconstitution: { presentation: 'EFG vial 50/70 mg', method: 'Atemperar vial. Reconstituir con 10,5 mL de API (5,2 o 7,2 mg/mL).', stability: 'Reconstituido: 24h TA. Diluido: 24h TA/nevera.' },
+        protocols: [
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Diluir en 250 mL de SF (no usar glucosa). Administrar en 60-90 min. En restricción de líquidos: dosis ≤50 mg en 100 mL SF.</p>' }
+        ]
+    },
+    'cefazolina': {
+        name: 'CEFAZOLINA',
+        reconstitution: { presentation: 'EFG vial 1 g + amp 4 mL API', method: 'Reconstituir con disolvente (250 mg/mL).', stability: '8h TA / 24h nevera.' },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Diluir 1g en mín. 10 mL API. Administrar lento en 3-5 min (nunca < 3 min).</p>' },
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>1g en 50-100 mL o 2g en 100 mL SF/SG5%. Administrar en 30-60 min.</p>' },
+            { label: 'Intramuscular', validity: '✓', class: '', content: '<p>Reconstituir con 1,5 mL API + 1,5 mL lidocaína 2%. Máx 1g por punto de inyección.</p>' }
+        ]
+    },
+    'cefotaxima': {
+        name: 'CEFOTAXIMA',
+        reconstitution: { presentation: 'EFG vial 500mg/1g/2g', method: 'Reconstituir con disolvente amp (250 mg/mL o 200 mg/mL).', stability: '24h TA/nevera.' },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Solo 500mg y 1g. Lento en 3-5 min.</p>' },
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Diluir en 50-100 mL SF/SG5%. Administrar en 30-60 min.</p>' },
+            { label: 'Intramuscular', validity: '✓', class: '', content: '<p>1g con 2 mL API + 2 mL lidocaína 2% vía intraglútea profunda. Si dosis >2g usar vía IV.</p>' }
+        ]
+    },
+    'ceftazidima': {
+        name: 'CEFTAZIDIMA',
+        reconstitution: { presentation: 'EFG vial 1g/2g', method: '1g con 10 mL API (100 mg/mL). 2g con 10 mL API (200 mg/mL). Puede liberar CO2.', stability: '24h TA/nevera.' },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Lento en 3-5 min.</p>' },
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Vía recomendada. Diluir en 50-100 mL SF/SG5% en 15-30 min. Permite perfusión extendida (3h).</p>' },
+            { label: 'Intramuscular', validity: '✓', class: '', content: '<p>1,5 mL API + 1,5 mL lidocaína 2%. Solo si no es posible vía IV.</p>' }
+        ]
+    },
+    'ceftazidima-avibactam': {
+        name: 'CEFTAZIDIMA/AVIBACTAM',
+        reconstitution: { presentation: 'Zavicefta® vial 2 g/0,5 g', method: 'Reconstituir con 10 mL de API.', stability: 'Reconstituido: Inmediato. Diluido: 12h TA / 24h nevera.' },
+        protocols: [
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Diluir en 50-250 mL de SF o SG5%. Administrar en 120 min.</p>' }
+        ]
+    },
+    'ceftriaxona': {
+        name: 'CEFTRIAXONA',
+        reconstitution: { presentation: 'EFG vial 1g/2g y 250mg (IM)', method: '1g con 10 mL API (100 mg/mL). 2g con 40 mL API/SF (50 mg/mL).', stability: '8h TA / 24h nevera.' },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Lento en 2-4 minutos.</p>' },
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Dosis ≥50 mg/Kg en 50-100 mL SF/SG5% en 30-60 min. No mezclar con calcio.</p>' },
+            { label: 'Intramuscular', validity: '✓', class: '', content: '<p>1g con 1,5 mL lidocaína 2% + 2 mL API. Vía profunda. Dosis >1g en dos puntos.</p>' }
+        ]
+    },
+    'cefuroxima': {
+        name: 'CEFUROXIMA',
+        reconstitution: { presentation: 'EFG vial 750 mg + amp 6 mL API', method: 'Reconstituir con disolvente (125 mg/mL).', stability: '5h TA / 24h nevera.' },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Administrar lentamente en 3-5 minutos.</p>' },
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Diluir en 50-100 mL de SF o SG5%. Administrar en 30-60 minutos.</p>' },
+            { label: 'Intramuscular', validity: '✓', class: '', content: '<p>Reconstituir con 3 mL API (suspensión opaca). Vía profunda.</p>' }
+        ]
+    },
+    'cianocobalamina': {
+        name: 'CIANOCOBALAMINA (Vit B12)',
+        reconstitution: { presentation: 'Optovite® B12 amp 1.000 mcg/2 mL', method: 'No procede', stability: 'No procede.' },
+        protocols: [
+            { label: 'Intramuscular', validity: '✓', class: '', content: '<p>Vía de elección. Masa muscular amplia.</p>' },
+            { label: 'Subcutánea', validity: '✓', class: '', content: '<p>Subcutánea profunda en pacientes gastrectomizados.</p>' },
+            { label: 'IV directa', validity: 'No recomendable', class: 'invalido', content: '<p>Riesgo de reacciones anafilácticas.</p>' }
+        ]
+    },
+    'ciclosporina': {
+        name: 'CICLOSPORINA',
+        reconstitution: { presentation: 'Sandimmun® ampolla 50 mg/1 mL (MAR/Peligroso G2)', method: 'No procede', stability: 'Diluido: 24 h en nevera.' },
+        protocols: [
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Diluir 50 mg en 20-100 mL SF/SG5%. Administrar lento en 2-6h (máx 50 mg/h). Usar vidrio/PE (se adsorbe a PVC).</p>' }
+        ]
+    },
+    'ciprofloxacino': {
+        name: 'CIPROFLOXACINO',
+        reconstitution: { presentation: 'EFG bolsa perfusión 200 mg/100 mL', method: 'No procede', stability: 'No procede.' },
+        protocols: [
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Vena de gran tamaño. Administrar en 30 minutos.</p>' }
+        ]
+    },
+    'cisatracurio': {
+        name: 'CISATRACURIO',
+        reconstitution: { presentation: 'EFG amp 10mg/5mL y 150mg/30mL', method: 'No procede', stability: 'Diluido: 24h TA. Proteger luz.' },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Bolo en 5-10 segundos.</p>' },
+            { label: 'IV continua', validity: '✓', class: 'critico', content: '<p>Diluir en SF/SG5% (0,1-2 mg/mL) o sin diluir. Velocidad según peso y respuesta.</p>' }
+        ]
+    },
+    'claritromicina': {
+        name: 'CLARITROMICINA',
+        reconstitution: { presentation: 'Klacid® vial 500 mg', method: '10 mL de API (50 mg/mL). Girar suavemente.', stability: 'Reconstituido: 24h TA/nevera. Diluido: 6h TA / 24h nevera.' },
+        protocols: [
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Diluir vial en 250 mL SF/SG5%. Administrar en 60 min. Vena proximal de gran tamaño.</p>' }
+        ]
+    },
+    'clindamicina': {
+        name: 'CLINDAMICINA',
+        reconstitution: { presentation: 'EFG amp 600 mg/4 mL (150 mg/mL)', method: 'No procede', stability: 'Diluido: 24 h TA.' },
+        protocols: [
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Vía de elección. Diluir en 50-100 mL SF/SG5% (máx 12 mg/mL). En 10-60 min (máx 30 mg/min). Máx 1.200 mg/infusión.</p>' },
+            { label: 'Intramuscular', validity: '✓', class: '', content: '<p>Vía profunda. Máximo 600 mg por pinchazo único.</p>' }
+        ]
+    },
+    'clonazepam': {
+        name: 'CLONAZEPAM',
+        reconstitution: { presentation: 'Rivotril® amp 1 mg/1 mL + amp API (Peligroso G3)', method: 'Reconstituir con ampolla API (0,5 mg/mL).', stability: 'Reconstituido: Inmediato. Diluido: 24h TA.' },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Vena gran calibre. Lento (0,25-0,5 mg/min). Usar vidrio/PE (se adsorbe a PVC).</p>' },
+            { label: 'Intramuscular', validity: '✓', class: '', content: '<p>Solo si vía IV es impracticable.</p>' }
+        ]
+    },
+    'clorazepato': {
+        name: 'CLORAZEPATO DIPOTÁSICO',
+        reconstitution: { presentation: 'Tranxilium® vial 20 mg + amp diluyente 2 mL', method: 'Reconstituir con su ampolla (10 mg/mL).', stability: 'Uso inmediato.' },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Lento (2-4 min) en vena gran calibre. Necesario equipo reanimación.</p>' },
+            { label: 'Intramuscular', validity: '✓', class: '', content: '<p>Vía profunda.</p>' }
+        ]
+    },
+    'clorpromazina': {
+        name: 'CLORPROMAZINA',
+        reconstitution: { presentation: 'Largactil® amp 25 mg/5 mL', method: 'No procede', stability: 'Diluido: 24 h TA. Proteger luz.' },
+        protocols: [
+            { label: 'Intramuscular', validity: '✓', class: '', content: '<p>Vía de elección. Lenta y profunda. Masa muscular grande. Vigilar TA.</p>' },
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Diluir en 50-100 mL SF/SG5%. En al menos 30 min. Máx 1 mg/min.</p>' }
+        ]
+    },
+    'cloruro-sodico-20': {
+        name: 'CLORURO SÓDICO 20%',
+        reconstitution: { presentation: 'EFG ampolla 10 mL', method: 'No procede', stability: 'Uso inmediato.' },
+        protocols: [
+            { label: 'IV intermitente', validity: '✓', class: 'critico', content: '<p>Nunca directo sin diluir (alta osmolaridad). Para salino al 3%: 60 mL ClNa 20% en 500 mL SF 0,9%.</p>' },
+            { label: 'IV continua', validity: '✓', class: '', content: '<p>Añadir a solución de perfusión según prescripción.</p>' }
+        ]
+    },
+    'cloxacilina': {
+        name: 'CLOXACILINA',
+        reconstitution: { presentation: 'EFG vial 1 g', method: '20 mL API (50 mg/mL).', stability: 'Reconstituido: 24h TA/nevera. Diluido: 24h TA.' },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Lento en 3-4 minutos.</p>' },
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Diluir en 50-100 mL SF/SG5%. Administrar en 60 minutos.</p>' },
+            { label: 'Intramuscular', validity: '✓', class: '', content: '<p>Máx 500 mg por punto. Reconstituir 1g en 7 mL API e inyectar 3,5 mL.</p>' }
+        ]
+    },
+    'colistimetato': {
+        name: 'COLISTIMETATO DE SODIO',
+        reconstitution: { presentation: 'EFG vial 1 MUI (80 mg colistina)', method: '10 mL API.', stability: '8h TA / 24h nevera.' },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Máx 2 MUI en 10 mL SF/SG5%. En mín. 5 minutos.</p>' },
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Diluir en 50-100 mL SF/SG5%. Administrar en 30-60 min.</p>' }
+        ]
+    },
+    'complejo-protrombina': {
+        name: 'COMPLEJO DE PROTROMBINA HUMANO',
+        reconstitution: { presentation: 'Prothromplex® vial 600 UI + 20 mL API', method: 'Usar equipo transferencia. Disolver suave sin espuma.', stability: 'Uso inmediato (máx 3h TA).' },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: 'critico', content: '<p>Máximo 2 mL/min (60 UI/min). Riesgo de trombosis a altas velocidades.</p>' }
+        ]
+    },
+    'cotrimoxazol': {
+        name: 'COTRIMOXAZOL (Soltrim)',
+        reconstitution: { presentation: 'Soltrim® (800mg SMZ + 160mg TMP en 5mL)', method: 'Reconstituir vial polvo con su ampolla (Vol final 6 mL).', stability: 'Reconstituido: 24h TA. Diluido: 6h TA.' },
+        protocols: [
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Diluir cada vial en 250 mL de SF o SG5%. Administrar en 60-90 min.</p>' }
+        ]
     }
 };
