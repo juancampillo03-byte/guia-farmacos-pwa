@@ -10,6 +10,7 @@
     <div id="side-menu" class="side-nav">
         <a href="javascript:void(0)" id="close-menu" class="closebtn">&times;</a>
         <div class="menu-header">Menú Principal</div>
+        <button id="btn-ir-buscador" class="menu-link">🔍 Buscador de Fármacos</button>
         <button id="btn-via-oral-menu" class="menu-link">💊 Formas Parenterales por Vía Oral</button>
     </div>
 
@@ -22,12 +23,14 @@
     </header>
 
     <main>
-        <div class="search-container">
-            <input type="text" id="search-input" placeholder="Buscar fármaco...">
+        <div id="seccion-busqueda">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Buscar fármaco...">
+            </div>
+            
+            <div id="alphabet-index" class="alphabet-index"></div>
+            <div id="results-container" class="results-container"></div>
         </div>
-        
-        <div id="alphabet-index" class="alphabet-index"></div>
-        <div id="results-container" class="results-container"></div>
 
         <div id="ficha-farmaco" class="ficha">
             <p style="text-align: center; color: #555;">Selecciona un fármaco o usa el menú lateral.</p>

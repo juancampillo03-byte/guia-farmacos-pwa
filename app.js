@@ -7,6 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const openMenuBtn = document.getElementById('open-menu');
     const closeMenuBtn = document.getElementById('close-menu');
     const btnVO = document.getElementById('btn-via-oral-menu');
+    
+    // Elementos para control de vista
+    const seccionBusqueda = document.getElementById('seccion-busqueda');
+    const btnIrBuscador = document.getElementById('btn-ir-buscador');
 
     function norm(t) { return t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); }
 
@@ -14,10 +18,24 @@ document.addEventListener('DOMContentLoaded', () => {
     openMenuBtn.onclick = () => sideMenu.style.width = "280px";
     closeMenuBtn.onclick = () => sideMenu.style.width = "0";
 
-// --- TABLA PÁGINA 218 (LISTADO EXACTO SUMINISTRADO) ---
+    // --- MODO: VOLVER AL BUSCADOR ---
+    btnIrBuscador.onclick = () => {
+        sideMenu.style.width = "0"; 
+        seccionBusqueda.style.display = "block"; // Mostramos buscador e índice
+        input.value = ""; 
+        results.innerHTML = ""; 
+        buildIndex(); // Mostramos de nuevo las letras
+        ficha.innerHTML = `
+            <p style="text-align: center; color: #555;">Selecciona un fármaco o usa el menú lateral.</p>
+            <p style="text-align: center; color: #555;">Última actualización online: 29/12/2025</p>
+        `;
+    };
+
+    // --- MODO: TABLA PÁGINA 218 ---
     btnVO.onclick = () => {
         sideMenu.style.width = "0"; 
-        input.value = "";
+        seccionBusqueda.style.display = "none"; // OCULTAMOS BUSCADOR E ÍNDICE
+        
         ficha.innerHTML = `
             <h2>Formas Parenterales por Vía Oral</h2>
             <p style="font-size:0.8em; color:gray;">Presentaciones parenterales que pueden administrarse vía oral (bebibles)</p>
@@ -52,7 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     </tbody>
                 </table>
             </div>`;
-        results.innerHTML = "";
     };
 
     function renderDrugFicha(id) {
@@ -76,7 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderResults(filter, isAlpha = false) {
         let html = "";
         const fNorm = norm(filter);
-        // Limpiar ficha si el usuario busca algo nuevo
         if(filter !== "") ficha.innerHTML = '<p style="text-align:center; color:gray;">Resultados...</p>';
         
         const sorted = Object.entries(drugData).sort(([,a],[,b]) => norm(a.name).localeCompare(norm(b.name)));
