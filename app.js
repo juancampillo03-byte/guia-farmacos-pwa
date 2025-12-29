@@ -110,21 +110,30 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
     `);
 
-    // --- LÓGICA DE FÁRMACOS Y BUSCADOR ---
+    // --- LÓGICA DE FÁRMACOS Y BUSCADOR (CON COLORES RESTAURADOS) ---
     function renderDrugFicha(id) {
         const d = drugData[id];
         let protocolsHtml = "";
+        
         d.protocols.forEach(p => {
             const icon = p.class === 'critico' ? '🚨' : p.class === 'invalido' ? '❌' : '✅';
-            protocolsHtml += `<div class="protocolo-box ${p.class}"><h3>${icon} ${p.label}</h3><div>${p.content}</div></div>`;
+            // RESTAURAMOS LA CLASE 'protocolo-box' Y LA CLASE ESPECÍFICA (critico/invalido/etc)
+            protocolsHtml += `
+                <div class="protocolo-box ${p.class}">
+                    <h3>${icon} ${p.label}</h3>
+                    <div>${p.content}</div>
+                </div>`;
         });
-        ficha.innerHTML = `<h2>${d.name}</h2>
+
+        ficha.innerHTML = `
+            <h2>${d.name}</h2>
             <div class="seccion-reconstitución">
                 <p><strong>Presentación:</strong> ${d.reconstitution.presentation}</p>
                 <p><strong>Método:</strong> ${d.reconstitution.method}</p>
                 <p><strong>Estabilidad:</strong> ${d.reconstitution.stability}</p>
             </div>
             ${protocolsHtml}`;
+            
         results.innerHTML = "";
         window.scrollTo(0,0);
     }
