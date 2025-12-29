@@ -7,9 +7,16 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div id="side-menu" class="side-nav">
+        <a href="javascript:void(0)" id="close-menu" class="closebtn">&times;</a>
+        <div class="menu-header">Menú Principal</div>
+        <button id="btn-via-oral-menu" class="menu-link">💊 Parenterales por V.O. (Pág. 218)</button>
+        </div>
+
     <header>
+        <span id="open-menu" class="menu-icon">☰</span>
         <div class="logo-container">
-            <h1>Guía de Administración de Fármacos Vía Parenteral</h1>
+            <h1>Guía de Administración Parenteral</h1>
             <h2>Servicio de Farmacia - Hospital Marina Baixa</h2>
         </div>
     </header>
@@ -21,23 +28,19 @@
         
         <div id="alphabet-index" class="alphabet-index"></div>
         
-        <div class="special-actions">
-            <button id="btn-via-oral" class="special-button">💊 Parenterales por V.O. (Pág. 218)</button>
-        </div>
-
         <div id="results-container" class="results-container"></div>
 
         <div id="ficha-farmaco" class="ficha">
-            <p style="text-align: center; color: #555;">Busca un fármaco o consulta la tabla de la página 218 arriba.</p>
+            <p style="text-align: center; color: #555;">Busca un fármaco, usa el índice o abre el menú para ver la tabla de la pág. 218.</p>
         </div>
     </main>
 
     <footer class="referencias-footer">
         <hr>
         <h3>Referencias y Autores</h3>
-        <p>Departamento 16 – Villajoyosa. Hospital Marina Baixa. Edición 2024. [cite: 2, 3, 4]</p>
-        <p><strong>Autores:</strong> Sarah Myles, Juan Campillo, Gregorio Sanz, José Marco, Rosa María Fuster, Iván Beltrá, Mª Ángeles Cia, María Pomares, Vanesa María Castro. </p>
-        <p><em>ISBN: 978-84-09-70491-0 </em></p>
+        <p>Departamento 16 – Villajoyosa. Hospital Marina Baixa. Edición 2024.</p>
+        <p><strong>Autores:</strong> Sarah Myles, Juan Campillo, Gregorio Sanz, José Marco, Rosa María Fuster, Iván Beltrá, Mª Ángeles Cia, María Pomares, Vanesa María Castro.</p>
+        <p><em>ISBN: 978-84-09-70491-0</em></p>
     </footer>
 
     <script src="farmacos.js"></script>

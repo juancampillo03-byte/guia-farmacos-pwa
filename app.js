@@ -3,9 +3,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('search-input'); 
     const resultsContainer = document.getElementById('results-container');
     const alphabetIndex = document.getElementById('alphabet-index');
-    const btnViaOral = document.getElementById('btn-via-oral');
+    const btnViaOralMenu = document.getElementById('btn-via-oral-menu');
+    const sideMenu = document.getElementById('side-menu');
+    const openMenuBtn = document.getElementById('open-menu');
+    const closeMenuBtn = document.getElementById('close-menu');
+
+    // --- LÓGICA DEL MENÚ LATERAL ---
+    if (openMenuBtn && sideMenu && closeMenuBtn) {
+        openMenuBtn.addEventListener('click', () => {
+            sideMenu.style.width = "280px"; // Abre el menú
+        });
+
+        closeMenuBtn.addEventListener('click', () => {
+            sideMenu.style.width = "0"; // Cierra el menú
+        });
+    }
 
     function normalizeText(text) {
+        if (!text) return "";
         return text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     }
 
@@ -40,11 +55,17 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    if (btnViaOral) {
-        btnViaOral.addEventListener('click', () => {
+    // --- LÓGICA TABLA PÁGINA 218 (DENTRO DEL MENÚ) ---
+    if (btnViaOralMenu) {
+        btnViaOralMenu.addEventListener('click', () => {
+            // Cerramos el menú
+            sideMenu.style.width = "0";
+            // Limpiamos buscador
+            searchInput.value = "";
+            
             fichaFarmaco.innerHTML = `
                 <h2>Administración de Parenterales por V.O.</h2>
-                <p class="nota-guia">Según página 218 de la Guía 2024. [cite: 25, 499]</p>
+                <p class="nota-guia">Según página 218 de la Guía 2024.</p>
                 <div class="tabla-vo-container">
                     <table class="tabla-vo">
                         <thead><tr><th>Fármaco</th><th>Presentación</th></tr></thead>
@@ -75,7 +96,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderResults(filter = '', isAlphabet = false) {
         let resultsHTML = '';
         const filterNorm = normalizeText(filter);
+        
+        // Cada vez que buscamos, nos aseguramos de que el mensaje de "bienvenida" o la tabla VO se borren si no hay selección
+        if (filter.length > 0) {
+            fichaFarmaco.innerHTML = '<p style="text-align: center; color: #555;">Selecciona un fármaco de la lista...</p>';
+        }
+
         const sortedDrugs = Object.entries(drugData).sort(([, a], [, b]) => normalizeText(a.name).localeCompare(normalizeText(b.name)));
+        
         for (const [id, data] of sortedDrugs) {
             const nameNorm = normalizeText(data.name);
             const matches = isAlphabet ? nameNorm.startsWith(filterNorm) : nameNorm.includes(filterNorm);
@@ -83,7 +111,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 resultsHTML += `<button class="result-button" data-drug-id="${id}">${data.name}</button>`;
             }
         }
+        
         resultsContainer.innerHTML = resultsHTML || '<p style="padding:10px;">No se encontraron fármacos</p>';
+        
         document.querySelectorAll('.result-button').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const id = e.currentTarget.getAttribute('data-drug-id');
@@ -100,12 +130,17 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.index-button').forEach(btn => {
             btn.addEventListener('click', () => {
                 searchInput.value = '';
+                // Al pulsar una letra, limpiamos la ficha para quitar la tabla anterior
+                fichaFarmaco.innerHTML = '<p style="text-align: center; color: #555;">Resultados para la letra ' + btn.innerText + '...</p>';
                 renderResults(btn.innerText, true);
             });
         });
     }
 
-    searchInput.addEventListener('input', (e) => renderResults(e.target.value));
+    searchInput.addEventListener('input', (e) => {
+        renderResults(e.target.value);
+    });
+
     buildIndex();
     renderResults(''); 
 });
