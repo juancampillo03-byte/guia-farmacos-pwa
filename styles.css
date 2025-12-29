@@ -9,37 +9,44 @@ body {
 header {
     background-color: #007bff;
     color: white;
-    padding: 20px 10px;
+    padding: 20px 15px;
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Alinea el icono con la primera línea del h1 */
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
+.menu-icon { 
+    font-size: 38px; /* Un poco más grande para facilitar el toque táctil */
+    cursor: pointer; 
+    margin-right: 15px;
+    line-height: 1; /* Asegura que el icono no tenga espacio extra arriba */
+    padding-top: 2px; /* Ajuste fino para centrarlo visualmente con la primera línea */
+}
+
 .logo-container {
     flex-grow: 1;
     text-align: center;
-    padding-right: 30px;
+    /* Quitamos el padding-right anterior para que el centrado sea real respecto a la pantalla */
 }
 
 header h1 { 
     margin: 0; 
     font-size: 1.15em; 
     font-weight: 800; 
-    line-height: 1.1; /* Ajustado para las 3 líneas */
+    line-height: 1.1; 
     text-transform: uppercase;
     letter-spacing: -0.2px;
 }
 
 header h2 { 
-    margin-top: 8px; 
+    margin-top: 10px; /* Un poco más de aire respecto al h1 */
     font-size: 0.85em; 
     font-weight: 400; 
     opacity: 0.9;
     line-height: 1.2; 
-    letter-spacing: 0.2px;
 }
 
 /* 2. MENÚ LATERAL */
