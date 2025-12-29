@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sideMenu.style.width = "0"; 
         input.value = "";
         ficha.innerHTML = `
-            <h2>Parenterales por V.O.</h2>
+            <h2>Formas Parenterales por Vía Oral</h2>
             <p style="font-size:0.8em; color:gray;">Presentaciones parenterales que pueden administrarse vía oral (bebibles)</p>
             <div class="tabla-vo-container">
                 <table class="tabla-vo">
