@@ -2096,4 +2096,3 @@ const drugData = {
         ]
     }
 };
-};
