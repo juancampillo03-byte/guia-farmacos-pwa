@@ -34,11 +34,12 @@ header h1 {
 }
 
 header h2 { 
-    margin-top: 6px; 
+    margin-top: 8px; 
     font-size: 0.85em; 
     font-weight: 400; 
     opacity: 0.9;
-    line-height: 1.1;
+    line-height: 1.2; /* Espaciado entre Servicio y Hospital */
+    letter-spacing: 0.2px;
 }
 
 /* 2. MENÚ LATERAL (Corrección de visibilidad) */
