@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const seccionBusqueda = document.getElementById('seccion-busqueda');
     const btnIrBuscador = document.getElementById('btn-ir-buscador');
+    const btnAviso = document.getElementById('btn-aviso-legal');
 
     function norm(t) { return t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); }
 
@@ -19,8 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- FUNCIÓN PARA VOLVER AL BUSCADOR ---
     btnIrBuscador.onclick = () => {
-        sideMenu.style.width = "0"; // Cerramos menú
-        seccionBusqueda.style.display = "block"; // Mostramos buscador
+        sideMenu.style.width = "0"; 
+        seccionBusqueda.style.display = "block"; 
         input.value = ""; 
         results.innerHTML = ""; 
         buildIndex(); 
@@ -28,16 +29,17 @@ document.addEventListener('DOMContentLoaded', () => {
             <p style="text-align: center; color: #555;">Selecciona un fármaco o usa el menú lateral.</p>
             <p style="text-align: center; color: #555;">Última actualización online: 29/12/2025</p>
         `;
+        window.scrollTo(0,0);
     };
 
-    // --- FUNCIÓN PARA VER LA TABLA ---
+    // --- FUNCIÓN PARA VER LA TABLA V.O. ---
     btnVO.onclick = () => {
-        sideMenu.style.width = "0"; // Cerramos menú
-        seccionBusqueda.style.display = "none"; // OCULTAMOS TODO EL BLOQUE DE BÚSQUEDA
+        sideMenu.style.width = "0"; 
+        seccionBusqueda.style.display = "none"; 
         
         ficha.innerHTML = `
             <h2>Formas Parenterales por Vía Oral</h2>
-            <p style="font-size:0.8em; color:gray;">Presentaciones parenterales que pueden administrarse vía oral (bebibles)</p>
+            <p style="font-size:0.8em; color:gray; text-align:center;">Presentaciones parenterales que pueden administrarse vía oral (bebibles)</p>
             <div class="tabla-vo-container">
                 <table class="tabla-vo">
                     <thead><tr><th>Fármaco</th><th>Presentación</th></tr></thead>
@@ -69,6 +71,27 @@ document.addEventListener('DOMContentLoaded', () => {
                     </tbody>
                 </table>
             </div>`;
+        window.scrollTo(0,0);
+    };
+
+    // --- FUNCIÓN PARA EL AVISO LEGAL ---
+    btnAviso.onclick = () => {
+        sideMenu.style.width = "0"; 
+        seccionBusqueda.style.display = "none"; 
+        
+        ficha.innerHTML = `
+            <div style="text-align: justify; line-height: 1.6; color: #333;">
+                <h2 style="color: #444; border-bottom: 2px solid #eee; padding-bottom: 10px; text-align: center;">Aviso Legal</h2>
+                <p>Los autores han hecho todos los esfuerzos posibles para asegurarse de que la información contenida en esta guía sea correcta y corresponde con la literatura médica y las autoridades sanitarias, en el momento de la publicación del libro.</p>
+                <p>Sin embargo, queremos advertir a los lectores que deben consultar las recomendaciones y las informaciones que, de forma periódica, proporcionan las autoridades sanitarias y los fabricantes de los medicamentos, y que no podemos hacernos responsables de las consecuencias que pudieran derivarse de cualquier error de texto que haya podido pasar inadvertido.</p>
+                <p>Finalmente, cuando para el manejo o tratamiento de una determinada situación haya más de una opción admitida, las recomendaciones del libro representan exclusivamente las preferencias de los autores, sin que ello indique que otras opciones no puedan ser igualmente eficaces o recomendables.</p>
+                <div style="margin-top: 40px; padding: 20px; background: #f1f3f5; border-radius: 10px; font-size: 0.85em; color: #666; border: 1px solid #e9ecef; text-align: center;">
+                    <strong>Servicio de Farmacia Hospitalaria</strong><br>
+                    Hospital Marina Baixa<br>
+                    <em>Guía de Administración Parenteral - Edición 2024</em>
+                </div>
+            </div>`;
+        window.scrollTo(0,0);
     };
 
     function renderDrugFicha(id) {
