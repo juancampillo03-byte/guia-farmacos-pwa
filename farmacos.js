@@ -524,10 +524,391 @@ const drugData = {
         ]
     },
     'cotrimoxazol': {
-        name: 'COTRIMOXAZOL (Soltrim)',
+        name: 'COTRIMOXAZOL (Trimetoprim + Cotrimoxazol)',
         reconstitution: { presentation: 'Soltrim® (800mg SMZ + 160mg TMP en 5mL)', method: 'Reconstituir vial polvo con su ampolla (Vol final 6 mL).', stability: 'Reconstituido: 24h TA. Diluido: 6h TA.' },
         protocols: [
             { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Diluir cada vial en 250 mL de SF o SG5%. Administrar en 60-90 min.</p>' }
+        ]
+    },
+    'dalbavancina': {
+        name: 'DALBAVANCINA',
+        reconstitution: { 
+            presentation: 'Xydalba® vial 500 mg', 
+            method: 'Reconstituir el vial con 25 mL de API exclusivamente. No agitar (evitar espuma). Invertir y mover suavemente.', 
+            stability: 'Reconstituido: 24 h en nevera. Diluido: 24 h en nevera.' 
+        },
+        protocols: [
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Diluir la dosis en 250-500 mL de SG5% (conc: 1-5 mg/mL). Administrar en 30 minutos.</p>' }
+        ]
+    },
+    'dantroleno': {
+        name: 'DANTROLENO',
+        reconstitution: { 
+            presentation: 'Dantrium® vial 20 mg + aguja filtro 5 micras', 
+            method: 'Reconstituir cada vial con 60 mL de API. Agitar hasta que sea clara. Usar aguja filtro para extraer.', 
+            stability: 'Reconstituido: 6 h a TA. Proteger de la luz.' 
+        },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Transferir a bolsa de plástico estéril de gran volumen. Administrar en 15 minutos.</p>' },
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Transferir a bolsa de plástico estéril de gran volumen. Administrar en 1 hora.</p>' }
+        ]
+    },
+    'daptomicina': {
+        name: 'DAPTOMICINA',
+        reconstitution: { 
+            presentation: 'EFG vial 350 mg / 500 mg', 
+            method: '350mg con 7 mL de SF; 500mg con 10 mL de SF. Reposo 10 min. Tarda 15 min en disolverse.', 
+            stability: 'Reconstituido: 12 h TA / 24 h nevera. Diluido: 12 h TA / 24 h nevera.' 
+        },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Administrar la dosis lentamente durante 2 minutos.</p>' },
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Diluir la dosis en 50 mL de SF y administrar en 30 minutos.</p>' }
+        ]
+    },
+    'deferoxamina': {
+        name: 'DEFEROXAMINA',
+        reconstitution: { 
+            presentation: 'Desferin® vial 500 mg', 
+            method: 'Reconstituir con 2 mL API (IM) o 5 mL API (IV/SC). Agitar enérgicamente.', 
+            stability: 'Reconstituido: 24 h a TA. Diluido: 24 h a TA.' 
+        },
+        protocols: [
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Diluir en 100-250 mL SF/SG5% (máx 10%). Velocidad: 15 mg/Kg/h. Evitar perfusión rápida (hipotensión).</p>' },
+            { label: 'IV continua', validity: '✓', class: '', content: '<p>Diluir en 1.000 mL SF/SG5% (máx 10%). Velocidad: 15 mg/Kg/h (máx 80 mg/Kg en 24h).</p>' },
+            { label: 'Subcutánea', validity: '✓', class: '', content: '<p>Diluir en SF/SG5% (máx 10%). Administrar lento en 8-24 h mediante bomba.</p>' },
+            { label: 'Intramuscular', validity: '✓', class: 'invalido', content: '<p>No recomendable (menor eficacia). Solo si la vía SC no es posible.</p>' }
+        ]
+    },
+    'desmopresina': {
+        name: 'DESMOPRESINA',
+        reconstitution: { 
+            presentation: 'Minurin® ampolla 4 mcg/1 mL', 
+            method: 'No procede', 
+            stability: 'Diluido: Uso inmediato.' 
+        },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Administrar en un minuto. Puede provocar rubor facial.</p>' },
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Diluir en 50-100 mL de SF y administrar en 15-30 minutos.</p>' },
+            { label: 'Subcutánea', validity: '✓', class: '', content: '<p>Vía de administración válida.</p>' },
+            { label: 'Intramuscular', validity: '✓', class: '', content: '<p>Uso en test diagnóstico (concentración renal).</p>' }
+        ]
+    },
+    'dexametasona': {
+        name: 'DEXAMETASONA',
+        reconstitution: { 
+            presentation: 'EFG amp 4 mg/1 mL y Fortecortin® amp 40 mg/5 mL', 
+            method: 'No procede', 
+            stability: 'Diluido: 24 h a TA. Proteger de la luz.' 
+        },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Administrar lentamente. Dosis 4mg en ≥1 min; dosis 40mg en 2-3 min.</p>' },
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Diluir en 50-100 mL de SF o SG5% y administrar en 30-60 minutos.</p>' },
+            { label: 'Intramuscular', validity: '✓', class: '', content: '<p>Vía válida (absorción más lenta).</p>' }
+        ]
+    },
+    'dexclorfeniramina': {
+        name: 'DEXCLORFENIRAMINA',
+        reconstitution: { 
+            presentation: 'EFG ampolla 5 mg/1 mL', 
+            method: 'No procede', 
+            stability: 'No procede.' 
+        },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Administrar lentamente, sin diluir y en al menos un minuto.</p>' },
+            { label: 'Intramuscular', validity: '✓', class: '', content: '<p>Administrar vía IM profunda.</p>' }
+        ]
+    },
+    'dexketoprofeno': {
+        name: 'DEXKETOPROFENO',
+        reconstitution: { 
+            presentation: 'Enantyum® amp 50 mg/2 mL', 
+            method: 'No procede', 
+            stability: 'Diluido: 24 h a TA/nevera. Proteger de la luz.' 
+        },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Administrar lentamente en al menos 15 segundos.</p>' },
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Diluir en 30-100 mL de SF o SG5%. Administrar en 10-30 min. Proteger de la luz.</p>' },
+            { label: 'Intramuscular', validity: '✓', class: '', content: '<p>Lenta y profunda inmediatamente tras extraer de la ampolla.</p>' },
+            { label: 'IV continua', validity: '✓', class: '', content: '<p>Vía de administración válida.</p>' }
+        ]
+    },
+    'diazepam': {
+        name: 'DIAZEPAM',
+        reconstitution: { 
+            presentation: 'Valium® ampolla 10 mg/2 mL (5 mg/mL)', 
+            method: 'No procede', 
+            stability: 'Diluido: 24 h a TA.' 
+        },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Lento, sin diluir, en vena de gran calibre. Máx 5 mg/min (1 mL/min). Riesgo de apnea.</p>' },
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Diluir en 50-100 mL de SF/SG5% (máx 0,1 mg/mL). Administrar en 15-30 min. Menos volumen puede precipitar.</p>' },
+            { label: 'Intramuscular', validity: '✓', class: '', content: '<p>Vía profunda si es necesario.</p>' }
+        ]
+    },
+    'diclofenaco': {
+        name: 'DICLOFENACO',
+        reconstitution: { 
+            presentation: 'EFG ampolla 75 mg/3 mL', 
+            method: 'No procede', 
+            stability: 'Proteger de la luz.' 
+        },
+        protocols: [
+            { label: 'Intramuscular', validity: '✓', class: '', content: '<p>Vía de elección. Inyección intraglútea profunda (cuadrante superior externo). Máx 75mg por punto. Máx 2 días.</p>' }
+        ]
+    },
+    'digoxina': {
+        name: 'DIGOXINA',
+        reconstitution: { 
+            presentation: 'EFG ampolla 0,5 mg/2 mL', 
+            method: 'No procede', 
+            stability: 'Diluido: 24 h a TA/nevera. Proteger de la luz.' 
+        },
+        protocols: [
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Vía de elección. Diluir en 50-250 mL de SF o SG5%. Administrar en 15-30 minutos.</p>' },
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Sin diluir o diluido (mín 4 veces volumen). Muy lento (mín 5 min) para evitar precipitación.</p>' }
+        ]
+    },
+    'dobutamina': {
+        name: 'DOBUTAMINA',
+        reconstitution: { 
+            presentation: 'EFG ampolla 250 mg/20 mL (MAR)', 
+            method: 'No procede', 
+            stability: 'Diluido: 24 h a TA/nevera. Puede presentar color rosa (oxidación).' 
+        },
+        protocols: [
+            { label: 'IV continua', validity: '✓', class: 'critico', content: '<p>Diluir en 500 mL de SF o SG5% (máx 5 mg/mL). Usar bomba de infusión. Ajustar según respuesta.</p>' }
+        ]
+    },
+    'dopamina': {
+        name: 'DOPAMINA',
+        reconstitution: { 
+            presentation: 'EFG ampolla 200 mg/5 mL (MAR)', 
+            method: 'No procede', 
+            stability: 'Diluido: 24 h a TA/nevera. Proteger de la luz.' 
+        },
+        protocols: [
+            { label: 'IV intermitente', validity: '✓', class: 'critico', content: '<p>Diluir en 250-500 mL SF/SG5% (800 o 400 mcg/mL). Usar bomba. Muy irritante (evitar extravasación).</p>' }
+        ]
+    },
+    'doxiciclina': {
+        name: 'DOXICICLINA',
+        reconstitution: { 
+            presentation: 'Vibravenosa® ampolla 100 mg/5 mL', 
+            method: 'No procede. Conservar en nevera.', 
+            stability: 'Diluido: 24 h a TA/nevera. Proteger de la luz.' 
+        },
+        protocols: [
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Diluir en 100-250 mL SF/SG5%. Administrar en 1-4 h (máx 100 mg/h). Muy irritante.</p>' },
+            { label: 'IV directa', validity: 'No recomendable', class: 'invalido', content: '<p>Si es necesario: diluir con 10-20 mL SF/API y muy lento (mín 2 min por 100 mg).</p>' }
+        ]
+    },
+    'edta-calcico': {
+        name: 'EDTA CÁLCICO DE SODIO',
+        reconstitution: { presentation: 'Ampolla 500 mg/10 mL', method: 'No procede', stability: 'Diluido: Uso inmediato.' },
+        protocols: [
+            { label: 'Intramuscular', validity: '✓', class: '', content: '<p>Vía de elección en encefalopatía. Dilución estándar: 250mg (5mL) + 1,6 mL lidocaína 2% (conc final 5 mg/mL).</p>' },
+            { label: 'IV continua', validity: '✓', class: '', content: '<p>Diluir 2 amp en 500 mL SF/SG5% (máx 5 mg/mL). En 6h por vía central (muy irritante).</p>' }
+        ]
+    },
+    'enoxaparina': {
+        name: 'ENOXAPARINA',
+        reconstitution: { presentation: 'EFG jeringas (varias dosis)', method: 'No procede', stability: 'No procede.' },
+        protocols: [
+            { label: 'Subcutánea', validity: '✓', class: '', content: '<p>Vía de elección.</p>' },
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Uso en IAMCEST. Inicialmente bolo seguido de SC. Limpiar con SF/SG5% antes y después.</p>' }
+        ]
+    },
+    'eritropoyetina-beta': {
+        name: 'ERITROPOYETINA BETA',
+        reconstitution: { presentation: 'Neorecormon® jeringa 500 UI/0,3 mL', method: 'No procede', stability: 'Conservar nevera. Proteger luz.' },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Elección en diálisis. Administrar en 2 min al final de la sesión.</p>' },
+            { label: 'Subcutánea', validity: '✓', class: '', content: '<p>Elección en pacientes no dializados.</p>' }
+        ]
+    },
+    'eritropoyetina-zeta': {
+        name: 'ERITROPOYETINA ZETA',
+        reconstitution: { presentation: 'Retacrit® jeringas (varias dosis)', method: 'No procede', stability: 'Atemperar 15-30 min. No agitar.' },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Administrar en 1-5 min. En diálisis, por puerto venoso o al final seguido de 10 mL SF.</p>' },
+            { label: 'Subcutánea', validity: '✓', class: '', content: '<p>Vía válida (máx 1 mL por zona).</p>' }
+        ]
+    },
+    'ertapenem': {
+        name: 'ERTAPENEM',
+        reconstitution: { 
+            presentation: 'EFG vial 1 g', 
+            method: '10 mL API o SF. Agitar bien.', 
+            stability: 'Reconstituido: Inmediato. Diluido: 6 h TA / 24 h nevera (usar en 4h tras sacar de nevera).' 
+        },
+        protocols: [
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Diluir en 50 mL SF (No usar SG5%). Administrar en 30 minutos.</p>' },
+            { label: 'Intramuscular', validity: '✓', class: '', content: '<p>3,2 mL lidocaína 1%. Vía profunda. Administrar en máx 1 h tras reconstituir.</p>' }
+        ]
+    },
+    'esmolol': {
+        name: 'ESMOLOL',
+        reconstitution: { presentation: 'Brevibloc® vial 100 mg/10 mL', method: 'No procede', stability: 'No procede.' },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: 'critico', content: '<p>Dosis de carga. Inyección muy rápida (30-60 seg).</p>' },
+            { label: 'IV continua', validity: '✓', class: 'critico', content: '<p>Mantenimiento sin dilución previa. Velocidad según respuesta.</p>' }
+        ]
+    },
+    'etanol': {
+        name: 'ETANOL',
+        reconstitution: { presentation: 'Alcohol absoluto ampolla 10 mL', method: 'No procede', stability: 'Diluido: Uso inmediato.' },
+        protocols: [
+            { label: 'IV intermitente', validity: '✓', class: 'critico', content: '<p>Diluir 50 mL en 500 mL SG5% (conc 0,078 g/mL). Carga: 8 mL/Kg en 60 min. Usar vía central.</p>' },
+            { label: 'IV continua', validity: '✓', class: 'critico', content: '<p>Mantenimiento: No alcohólicos 0,83 mL/Kg/h; Alcohólicos 1,96 mL/Kg/h.</p>' }
+        ]
+    },
+    'etecalcetida': {
+        name: 'ETECALCETIDA',
+        reconstitution: { presentation: 'Parsabiv® vial 2,5mg/0,5mL y 5mg/1mL', method: 'No procede', stability: 'Nevera. Proteger luz.' },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Sin diluir. En línea venosa al final de diálisis durante lavado con SF. Lavado posterior con ≥150 mL SF.</p>' }
+        ]
+    },
+    'etomidato': {
+        name: 'ETOMIDATO',
+        reconstitution: { presentation: 'Hypnomidate® amp 20 mg/10 mL', method: 'No procede', stability: 'Uso inmediato tras abrir.' },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Lento (aprox 30 seg) en vaso mediano/grande. Evitar inyección intraarterial (necrosis).</p>' },
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Perfusiones cortas 10-20 min o mantenimiento en anestesia.</p>' }
+        ]
+    },
+    'fenitoina': {
+        name: 'FENITOÍNA (MAR / Peligroso G2)',
+        reconstitution: { presentation: 'EFG ampolla 100 mg/2 mL', method: 'No procede', stability: 'Diluido: 2 h a TA.' },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: 'critico', content: '<p>Muy lento (máx 50 mg/min adultos; 25 mg/min ancianos). Lavar vía con 10-30 mL SF tras uso.</p>' },
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Diluir en 25-250 mL SF (conc 1-10 mg/mL). En 5-10 min. Lavar con SF antes y después.</p>' }
+        ]
+    },
+    'fenobarbital': {
+        name: 'FENOBARBITAL',
+        reconstitution: { presentation: 'Luminal® ampolla 200 mg/1 mL', method: 'No procede', stability: 'Diluido: Uso inmediato (máx 30 min).' },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Diluir 0,25-1 mL en 10 mL API. Velocidad 60 mg/min.</p>' },
+            { label: 'Intramuscular', validity: '✓', class: '', content: '<p>Vía de administración válida.</p>' }
+        ]
+    },
+    'fentanilo': {
+        name: 'FENTANILO',
+        reconstitution: { presentation: 'Fentanest® ampolla 0,15 mg/3 mL', method: 'No procede', stability: 'Diluido: 24 h a TA. Proteger luz.' },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Lento (mín 1 min).</p>' },
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Diluir en 100-500 mL SF/SG5%.</p>' },
+            { label: 'IV continua', validity: '✓', class: '', content: '<p>Diluir en 100-1.000 mL SF/SG5%.</p>' },
+            { label: 'Intramuscular', validity: '✓', class: '', content: '<p>Vía de administración válida.</p>' }
+        ]
+    },
+    'fibrinogeno': {
+        name: 'FIBRINÓGENO',
+        reconstitution: { presentation: 'Riastap® vial 1 g', method: '50 mL API. Agitar suave. Atemperar. Reposo 15 min.', stability: 'Reconstituido: 8 h TA. No refrigerar reconstituido.' },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Velocidad máxima 5 mL/min (300 mL/h).</p>' }
+        ]
+    },
+    'filgrastim': {
+        name: 'FILGRASTIM',
+        reconstitution: { presentation: 'Nivestim® jga precargada 300 mcg', method: 'No procede', stability: 'Diluido: 24 h en nevera.' },
+        protocols: [
+            { label: 'Subcutánea', validity: '✓', class: '', content: '<p>Vía de elección.</p>' },
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Diluir en 20 mL SG5% (mín 15 mcg/mL) en 30 min. Si conc < 2 mcg/mL añadir albúmina 20% (conc final 2 mg/mL).</p>' },
+            { label: 'IV continua', validity: '✓', class: '', content: '<p>Igual que intermitente, en 24 h.</p>' }
+        ]
+    },
+    'fitomenadiona': {
+        name: 'FITOMENADIONA (Vit K1)',
+        reconstitution: { presentation: 'Konakión® ampolla 10 mg/1 mL', method: 'No procede', stability: 'Proteger luz. No usar si hay turbidez.' },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Solo hemorragia mortal. Muy lento (mín 30 seg; máx 1 mg/min).</p>' },
+            { label: 'Intramuscular', validity: '✓', class: '', content: '<p>Hemorragias leves. Contraindicada en pacientes anticoagulados (riesgo hematomas y efecto depot).</p>' }
+        ]
+    },
+    'flecainida': {
+        name: 'FLECAINIDA',
+        reconstitution: { presentation: 'Apocard® ampolla 150 mg/15 mL', method: 'No procede', stability: 'Diluido: Uso inmediato.' },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: 'critico', content: '<p>Urgencia: lento sin diluir (2 mg/Kg; máx 150mg) en ≥10 min (o 30 min si hay historia IC). Monitorizar ECG.</p>' },
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Diluir 150 mg en 50-100 mL SG5%. Iniciar con 2 mg/Kg en 30 min y seguir pauta prescrita.</p>' },
+            { label: 'IV continua', validity: '✓', class: '', content: '<p>Vía de administración válida.</p>' }
+        ]
+    },
+    'fluconazol': {
+        name: 'FLUCONAZOL (Peligroso G3)',
+        reconstitution: { presentation: 'EFG vial 100mg/50mL y 200mg/100mL', method: 'No procede', stability: 'Uso inmediato.' },
+        protocols: [
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>No diluir (ya viene en SF). Velocidad máx 10 mL/min. Vial 100mg en 30 min; vial 200mg en 60 min.</p>' }
+        ]
+    },
+    'flufenazina': {
+        name: 'FLUFENAZINA DECANOATO',
+        reconstitution: { presentation: 'EFG ampolla 25 mg/1 mL', method: 'No procede', stability: 'No procede.' },
+        protocols: [
+            { label: 'Intramuscular', validity: '✓', class: '', content: '<p>Preparado depot. Vía profunda con jeringa seca y aguja ≥ 21G.</p>' },
+            { label: 'Subcutánea', validity: '✓', class: '', content: '<p>Vía de administración válida.</p>' }
+        ]
+    },
+    'flumazenilo': {
+        name: 'FLUMAZENILO',
+        reconstitution: { presentation: 'EFG ampolla 0,5 mg/5 mL', method: 'No procede', stability: 'Diluido: 24 h TA/nevera.' },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: 'critico', content: '<p>Dosis inicial rápida (mín 15 seg). Repetir cada 1 min hasta máx 4-6 bolos.</p>' },
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Diluir en 50-100 mL SF/SG5%.</p>' },
+            { label: 'IV continua', validity: '✓', class: '', content: '<p>Diluir en 500 mL SF/SG5%. Ritmo 0,1-0,4 mg/h (aprox 6h).</p>' }
+        ]
+    },
+    'folinato-calcico': {
+        name: 'FOLINATO CÁLCICO',
+        reconstitution: { presentation: 'EFG vial 350 mg', method: '17,5 mL API (20 mg/mL).', stability: 'Reconstituido: 8h TA / 24h nevera. Diluido: 24h TA.' },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Inyectar lento (máx 160 mg/min por el calcio).</p>' },
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Diluir en 100-250 mL SF/SG5% en 15-30 min.</p>' },
+            { label: 'Intramuscular', validity: '✓', class: '', content: '<p>Vía válida (ojo restricción volumen).</p>' },
+            { label: 'IV continua', validity: '✓', class: '', content: '<p>Vía de administración válida.</p>' }
+        ]
+    },
+    'fosaprepitant': {
+        name: 'FOSAPREPITANT',
+        reconstitution: { presentation: 'Ivemend® vial 150 mg', method: '5 mL SF (30 mg/mL).', stability: '24 h TA / nevera.' },
+        protocols: [
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Pasar reconstituido a 145 mL SF (vol final 150 mL; conc 1 mg/mL). En 20-30 min. Incompatible con calcio/magnesio/RL.</p>' }
+        ]
+    },
+    'fosfato-monosodico': {
+        name: 'FOSFATO MONOSÓDICO 1 M',
+        reconstitution: { presentation: 'EFG ampolla 1200 mg/10 mL', method: 'No procede', stability: 'Diluido: Uso inmediato.' },
+        protocols: [
+            { label: 'IV continua', validity: '✓', class: '', content: '<p>Diluir en 100-500 mL SF/SG5%. Administrar en 4-6 horas.</p>' },
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Vía de administración válida.</p>' }
+        ]
+    },
+    'fosfato-dipotasico': {
+        name: 'FOSFATO DIPOTÁSICO 1 M',
+        reconstitution: { presentation: 'EFG ampolla 10 mL', method: 'No procede', stability: 'Diluido: Uso inmediato.' },
+        protocols: [
+            { label: 'IV intermitente', validity: '✓', class: 'critico', content: '<p>Diluir al menos con mismo volumen. Máx 20 mEq K+/h.</p>' },
+            { label: 'IV continua', validity: '✓', class: 'critico', content: '<p>Máx 20 mEq K+/h.</p>' }
+        ]
+    },
+    'fosfomicina': {
+        name: 'FOSFOMICINA',
+        reconstitution: { presentation: 'Fosfocina® vial 1 g + amp 10 mL API', method: 'Reconstituir 1g con 10 mL API (reacción exotérmica).', stability: 'Reconstituido: 24h TA. Diluido: 24h TA/nevera.' },
+        protocols: [
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Diluir dosis en 50 mL SG5% en 30-60 min.</p>' }
+        ]
+    },
+    'furosemida': {
+        name: 'FUROSEMIDA',
+        reconstitution: { presentation: 'Seguril® amp 20mg/2mL y 250mg/25mL', method: 'No procede', stability: 'Diluido: 24h TA/nevera. Ojo: ampolla uso inmediato.' },
+        protocols: [
+            { label: 'IV directa', validity: '✓', class: '', content: '<p>Lento 20-40 mg en 1-2 min. Ampolla 250mg NO por esta vía.</p>' },
+            { label: 'IV intermitente', validity: '✓', class: '', content: '<p>Diluir en 50-250 mL SF/SG5%. Máx 4 mg/min (2,5 mg/min si IR grave).</p>' },
+            { label: 'IV continua', validity: '✓', class: '', content: '<p>Dosis > 250 mg. Diluir en 250-500 mL SF/SG5% con bomba (≥ 1 h).</p>' },
+            { label: 'Intramuscular', validity: '✓', class: '', content: '<p>Solo si la vía oral/IV no es posible.</p>' },
+            { label: 'Subcutánea', validity: '✓', class: '', content: '<p>Cuidados paliativos bolo/continua SC.</p>' }
         ]
     }
 };
