@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnIrBuscador = document.getElementById('btn-ir-buscador');
     const btnVO = document.getElementById('btn-via-oral-menu');
     const btnAviso = document.getElementById('btn-aviso-legal'); 
+    const btnAbreviaturas = document.getElementById('btn-abreviaturas');
 
     function norm(t) { return t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); }
 
@@ -108,6 +109,43 @@ document.addEventListener('DOMContentLoaded', () => {
                     Hospital Marina Baixa<br>
                     <em>Guía de Administración Parenteral - Edición 2024</em>
                 </div>
+            </div>`;
+        window.scrollTo(0,0);
+    };
+
+    // --- FUNCIÓN 4: ÍNDICE DE ABREVIATURAS (COMPLETO PÁG. 9) ---
+    btnAbreviaturas.onclick = () => {
+        sideMenu.style.width = "0"; 
+        seccionBusqueda.style.display = "none"; 
+        
+        ficha.innerHTML = `
+            <h2>Índice de Abreviaturas</h2>
+            <p style="font-size:0.85em; color:gray; text-align:center; margin-bottom:20px;">Terminología técnica de la guía</p>
+            
+            <div style="background: white; padding: 10px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <div class="abreviatura-fila"><span class="abr-sigla">adm.</span><span class="abr-significado">Administración</span></div>
+                <div class="abreviatura-fila"><span class="abr-sigla">amp</span><span class="abr-significado">Ampolla</span></div>
+                <div class="abreviatura-fila"><span class="abr-sigla">API</span><span class="abr-significado">Agua para inyectables</span></div>
+                <div class="abreviatura-fila"><span class="abr-sigla">conc.</span><span class="abr-significado">Concentración</span></div>
+                <div class="abreviatura-fila"><span class="abr-sigla">f.f.</span><span class="abr-significado">Forma farmacéutica</span></div>
+                <div class="abreviatura-fila"><span class="abr-sigla">GS</span><span class="abr-significado">Suero glucosalino (0,33% NaCl / 3,3% Glucosa)</span></div>
+                <div class="abreviatura-fila"><span class="abr-sigla">h</span><span class="abr-significado">Hora/s</span></div>
+                <div class="abreviatura-fila"><span class="abr-sigla">IM</span><span class="abr-significado">Vía Intramuscular</span></div>
+                <div class="abreviatura-fila"><span class="abr-sigla">IV</span><span class="abr-significado">Vía Intravenosa</span></div>
+                <div class="abreviatura-fila"><span class="abr-sigla">IV directa</span><span class="abr-significado">Inyección intravenosa directa (bolus)</span></div>
+                <div class="abreviatura-fila"><span class="abr-sigla">IV interm.</span><span class="abr-significado">Infusión intravenosa intermitente</span></div>
+                <div class="abreviatura-fila"><span class="abr-sigla">IV cont.</span><span class="abr-significado">Infusión intravenosa continua</span></div>
+                <div class="abreviatura-fila"><span class="abr-sigla">mEq</span><span class="abr-significado">Miliequivalente</span></div>
+                <div class="abreviatura-fila"><span class="abr-sigla">min</span><span class="abr-significado">Minuto/s</span></div>
+                <div class="abreviatura-fila"><span class="abr-sigla">reconst.</span><span class="abr-significado">Reconstitución</span></div>
+                <div class="abreviatura-fila"><span class="abr-sigla">SC</span><span class="abr-significado">Vía Subcutánea</span></div>
+                <div class="abreviatura-fila"><span class="abr-sigla">SF</span><span class="abr-significado">Suero Fisiológico (0,9% NaCl)</span></div>
+                <div class="abreviatura-fila"><span class="abr-sigla">SG5%</span><span class="abr-significado">Suero Glucosado 5%</span></div>
+                <div class="abreviatura-fila"><span class="abr-sigla">SG10%</span><span class="abr-significado">Suero Glucosado 10%</span></div>
+                <div class="abreviatura-fila"><span class="abr-sigla">sol.</span><span class="abr-significado">Solución / Disolución</span></div>
+                <div class="abreviatura-fila"><span class="abr-sigla">UI</span><span class="abr-significado">Unidades Internacionales</span></div>
+                <div class="abreviatura-fila"><span class="abr-sigla">v.o.</span><span class="abr-significado">Vía oral</span></div>
+                <div class="abreviatura-fila"><span class="abr-sigla">vial</span><span class="abr-significado">Vial</span></div>
             </div>`;
         window.scrollTo(0,0);
     };
