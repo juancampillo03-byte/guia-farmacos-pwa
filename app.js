@@ -16,9 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function norm(t) { return t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); }
 
     // --- FUNCIÓN MAESTRA DE NAVEGACIÓN ---
-    // Esta función centraliza la limpieza de la pantalla para evitar errores visuales
     const navegarA = (htmlContenido, mostrarBuscador = false) => {
-        sideMenu.style.width = "0"; // Cierra el menú siempre
+        sideMenu.style.width = "0"; 
         seccionBusqueda.style.display = mostrarBuscador ? "block" : "none";
         ficha.innerHTML = htmlContenido;
         if (mostrarBuscador) {
@@ -33,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('open-menu').onclick = () => { sideMenu.style.width = "280px"; };
     document.getElementById('close-menu').onclick = () => { sideMenu.style.width = "0"; };
 
-    // --- ASIGNACIÓN DE EVENTOS A LOS BOTONES DEL MENÚ ---
+    // --- EVENTOS DE NAVEGACIÓN ---
 
     btnIrBuscador.onclick = () => navegarA(`
         <p style="text-align: center; color: #555; margin-top: 40px;">Selecciona un fármaco o usa el menú lateral.</p>
@@ -42,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     btnVO.onclick = () => navegarA(`
         <h2>Formas Parenterales por Vía Oral</h2>
-        <p style="font-size:0.85em; color:gray; text-align:center; margin-bottom:15px;">Presentaciones parenterales de fármacos que pueden ser administrados por vía oral (bebibles)</p>
+        <p style="font-size:0.85em; color:gray; text-align:center; margin-bottom:15px;">Presentaciones bebibles</p>
         <div class="lista-vo-container">
             <div class="tarjeta-vo"><div class="nombre-farmaco">Acetilcisteína</div><div class="dosis-presentacion">amp 300 mg/3mL</div></div>
             <div class="tarjeta-vo"><div class="nombre-farmaco">Ácido ascórbico</div><div class="dosis-presentacion">amp 1.000 mg/5 mL</div></div>
@@ -78,13 +77,10 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="abreviatura-fila"><span class="abr-sigla">amp</span><span class="abr-significado">Ampolla</span></div>
             <div class="abreviatura-fila"><span class="abr-sigla">API</span><span class="abr-significado">Agua para inyectables</span></div>
             <div class="abreviatura-fila"><span class="abr-sigla">conc.</span><span class="abr-significado">Concentración</span></div>
-            <div class="abreviatura-fila"><span class="abr-sigla">f.f.</span><span class="abr-significado">Forma farmacéutica</span></div>
-            <div class="abreviatura-fila"><span class="abr-sigla">GS</span><span class="abr-significado">Suero glucosalino (0,33% NaCl / 3,3% Glucosa)</span></div>
-            <div class="abreviatura-fila"><span class="abr-sigla">h</span><span class="abr-significado">Hora/s</span></div>
+            <div class="abreviatura-fila"><span class="abr-sigla">GS</span><span class="abr-significado">Suero glucosalino</span></div>
             <div class="abreviatura-fila"><span class="abr-sigla">IM</span><span class="abr-significado">Vía Intramuscular</span></div>
             <div class="abreviatura-fila"><span class="abr-sigla">IV</span><span class="abr-significado">Vía Intravenosa</span></div>
-            <div class="abreviatura-fila"><span class="abr-sigla">mEq</span><span class="abr-sigla">Miliequivalente</span></div>
-            <div class="abreviatura-fila"><span class="abr-sigla">min</span><span class="abr-significado">Minuto/s</span></div>
+            <div class="abreviatura-fila"><span class="abr-sigla">reconst.</span><span class="abr-significado">Reconstitución</span></div>
             <div class="abreviatura-fila"><span class="abr-sigla">SF</span><span class="abr-significado">Suero Fisiológico (0,9% NaCl)</span></div>
             <div class="abreviatura-fila"><span class="abr-sigla">SG5%</span><span class="abr-significado">Suero Glucosado 5%</span></div>
             <div class="abreviatura-fila"><span class="abr-sigla">v.o.</span><span class="abr-significado">Vía oral</span></div>
@@ -95,7 +91,9 @@ document.addEventListener('DOMContentLoaded', () => {
     btnAviso.onclick = () => navegarA(`
         <div style="text-align: justify; line-height: 1.6; color: #333; padding: 10px;">
             <h2 style="color: #444; border-bottom: 2px solid #eee; padding-bottom: 10px; text-align: center;">Aviso Legal</h2>
-            <p>Los autores han hecho todos los esfuerzos posibles para asegurarse de que la información sea correcta en el momento de la publicación.</p>
+            <p>Los autores han hecho todos los esfuerzos posibles para asegurarse de que la información contenida en esta guía sea correcta y corresponde con la literatura médica y las autoridades sanitarias, en el momento de la publicación de la guía.</p>
+            <p>Sin embargo, queremos advertir a los lectores que deben consultar las recomendaciones y las informaciones que, de forma periódica, proporcionan las autoridades sanitarias y los fabricantes de los medicamentos, y que no podemos hacernos responsables de las consecuencias que pudieran derivarse de cualquier error de texto que haya podido pasar inadvertido.</p>
+            <p>Finalmente, cuando para el manejo o tratamiento de una determinada situación haya más de una opción admitida, las recomendaciones de la guía representan exclusivamente las preferencias de los autores, sin que ello indique que otras opciones no puedan ser igualmente eficaces o recomendables.</p>
             <div style="margin-top: 25px; border-top: 1px solid #eee; padding-top: 15px; background: #fff;">
                 <h3 style="font-size: 1.1em; color: #007bff; margin-bottom: 10px;">Autores:</h3>
                 <ul style="list-style: none; padding-left: 5px; font-size: 0.95em; color: #444; line-height: 1.5;">
@@ -103,6 +101,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li style="margin-top: 10px; color: #666; font-weight: 600;">Servicio de Farmacia Hospitalaria - Hospital Marina Baixa</li>
                 </ul>
             </div>
+            <p style="font-style: italic; color: #666; border-top: 1px solid #eee; padding-top: 15px; margin-top: 20px; font-size: 0.85em;">
+                Cualquier forma de reproducción, distribución, comunicación pública o transformación de esta obra, sólo puede ser realizada con la autorización de sus titulares, salvo excepciones previstas por ley.
+            </p>
             <div style="margin-top: 40px; padding: 20px; background: #f1f3f5; border-radius: 10px; font-size: 0.85em; color: #666; border: 1px solid #e9ecef; text-align: center;">
                 <strong>Servicio de Farmacia Hospitalaria</strong><br>Hospital Marina Baixa<br><em>Edición 2024</em>
             </div>
