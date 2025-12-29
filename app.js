@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h2 style="color: #444; border-bottom: 2px solid #eee; padding-bottom: 10px; text-align: center;">Aviso Legal</h2>
                 <p>Los autores han hecho todos los esfuerzos posibles para asegurarse de que la información contenida en esta guía sea correcta y corresponde con la literatura médica y las autoridades sanitarias, en el momento de la publicación de la guía.</p>
                 <p>Sin embargo, queremos advertir a los lectores que deben consultar las recomendaciones y las informaciones que, de forma periódica, proporcionan las autoridades sanitarias y los fabricantes de los medicamentos, y que no podemos hacernos responsables de las consecuencias que pudieran derivarse de cualquier error de texto que haya podido pasar inadvertido.</p>
-                <p>Finalmente, cuando para el manejo o tratamiento de una determinada situación haya más de una opción admitida, las recomendaciones del libro representan exclusivamente las preferencias de los autores, sin que ello indique que otras opciones no puedan ser igualmente eficaces o recomendables.</p>
+                <p>Finalmente, cuando para el manejo o tratamiento de una determinada situación haya más de una opción admitida, las recomendaciones de la guía representan exclusivamente las preferencias de los autores, sin que ello indique que otras opciones no puedan ser igualmente eficaces o recomendables.</p>
                 
                 <div style="margin-top: 25px; border-top: 1px solid #eee; padding-top: 15px; background: #fff;">
                     <h3 style="font-size: 1.1em; color: #007bff; margin-bottom: 10px;">Autores:</h3>
