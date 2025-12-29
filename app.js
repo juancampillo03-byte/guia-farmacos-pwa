@@ -14,25 +14,40 @@ document.addEventListener('DOMContentLoaded', () => {
     openMenuBtn.onclick = () => sideMenu.style.width = "280px";
     closeMenuBtn.onclick = () => sideMenu.style.width = "0";
 
-    // --- TABLA PÁGINA 218 ---
+// --- TABLA PÁGINA 218 (LISTADO EXACTO SUMINISTRADO) ---
     btnVO.onclick = () => {
-        sideMenu.style.width = "0"; // Cierra el menú
+        sideMenu.style.width = "0"; 
         input.value = "";
         ficha.innerHTML = `
             <h2>Parenterales por V.O.</h2>
-            <p style="font-size:0.8em; color:gray;">Presentaciones parenterales que pueden administrarse por vía oral</p>
+            <p style="font-size:0.8em; color:gray;">Según pág. 218 de la Guía de Administración Parenteral 2024</p>
             <div class="tabla-vo-container">
                 <table class="tabla-vo">
                     <thead><tr><th>Fármaco</th><th>Presentación</th></tr></thead>
                     <tbody>
                         <tr><td>Acetilcisteína</td><td>amp 300 mg/3mL</td></tr>
+                        <tr><td>Ácido ascórbico</td><td>amp 1.000 mg/5 mL</td></tr>
                         <tr><td>Ácido tranexámico</td><td>amp 500 mg/5 mL</td></tr>
-                        <tr><td>Bicarbonato sódico</td><td>amp 8.4% 10 mL</td></tr>
+                        <tr><td>Atropina</td><td>amp 1 mg/1 mL</td></tr>
+                        <tr><td>Bicarbonato sódico</td><td>amp 8.4%, 1 M/10 mL</td></tr>
+                        <tr><td>Butilescopolamina</td><td>amp 20 mg/1 mL</td></tr>
+                        <tr><td>Butilescopolamina + metamizol</td><td>amp 20 mg+2,5g/5 mL</td></tr>
+                        <tr><td>Cafeína citrato</td><td>amp 20 mg/1 mL</td></tr>
+                        <tr><td>Cianocobalamina</td><td>amp 1 mg/2 mL</td></tr>
+                        <tr><td>Ciclofosfamida</td><td>vial 1 g</td></tr>
                         <tr><td>Clonazepam</td><td>amp 1 mg/1 mL</td></tr>
+                        <tr><td>Cloruro sódico</td><td>amp 20% 10 mL</td></tr>
+                        <tr><td>Desferoxamina</td><td>vial 500 mg</td></tr>
+                        <tr><td>Dexametasona</td><td>amp 40 mg/5 mL y 4 mg/mL</td></tr>
                         <tr><td>Diazepam</td><td>amp 10 mg/2 mL</td></tr>
                         <tr><td>Digoxina</td><td>amp 0,5 mg/2 mL</td></tr>
-                        <tr><td>Fitomenadiona (K1)</td><td>amp 10 mg/1 mL</td></tr>
-                        <tr><td>Furosemida</td><td>amp 20 mg/2 mL</td></tr>
+                        <tr><td>Fitomenadiona</td><td>amp 10 mg/1 mL</td></tr>
+                        <tr><td>Folinato cálcico</td><td>vial 350 mg</td></tr>
+                        <tr><td>Furosemida</td><td>amp 20 mg/2 mL y 250 mg/25 mL</td></tr>
+                        <tr><td>Hidralazina</td><td>amp 20 mg</td></tr>
+                        <tr><td>Hidrocortisona</td><td>vial 75 mg</td></tr>
+                        <tr><td>Ketamina</td><td>vial 500 mg/10 mL</td></tr>
+                        <tr><td>Labetalol</td><td>amp 100 mg/20 mL</td></tr>
                         <tr><td>Magnesio sulfato</td><td>amp 1,5 g/10 mL</td></tr>
                     </tbody>
                 </table>
