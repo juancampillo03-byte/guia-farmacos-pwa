@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const seccionBusqueda = document.getElementById('seccion-busqueda');
     const btnIrBuscador = document.getElementById('btn-ir-buscador');
     const btnVO = document.getElementById('btn-via-oral-menu');
-    const btnAviso = document.getElementById('btn-aviso-legal'); // Aseguramos que esté aquí
+    const btnAviso = document.getElementById('btn-aviso-legal'); 
 
     function norm(t) { return t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); }
 
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo(0,0);
     };
 
-    // --- FUNCIÓN 3: VER AVISO LEGAL ---
+    // --- FUNCIÓN 3: VER AVISO LEGAL (CON LISTADO COMPLETO DE AUTORES) ---
     btnAviso.onclick = () => {
         sideMenu.style.width = "0"; 
         seccionBusqueda.style.display = "none"; 
@@ -87,7 +87,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p>Sin embargo, queremos advertir a los lectores que deben consultar las recomendaciones y las informaciones que, de forma periódica, proporcionan las autoridades sanitarias y los fabricantes de los medicamentos, y que no podemos hacernos responsables de las consecuencias que pudieran derivarse de cualquier error de texto que haya podido pasar inadvertido.</p>
                 <p>Finalmente, cuando para el manejo o tratamiento de una determinada situación haya más de una opción admitida, las recomendaciones del libro representan exclusivamente las preferencias de los autores, sin que ello indique que otras opciones no puedan ser igualmente eficaces o recomendables.</p>
                 
-                <p style="font-style: italic; color: #666; border-top: 1px solid #eee; padding-top: 15px; margin-top: 20px;">
+                <div style="margin-top: 25px; border-top: 1px solid #eee; padding-top: 15px; background: #fff;">
+                    <h3 style="font-size: 1.1em; color: #007bff; margin-bottom: 10px;">Autores:</h3>
+                    <ul style="list-style: none; padding-left: 5px; font-size: 0.95em; color: #444; line-height: 1.5;">
+                        <li>• Sarah Myles Velasco</li>
+                        <li>• Juan Campillo López</li>
+                        <li>• Gregorio Sanz Tamargo</li>
+                        <li>• José Marco del Río</li>
+                        <li>• Rosa María Fuster Ruiz de Apodaca</li>
+                        <li>• Iván Beltrá Picó</li>
+                        <li>• Mª Ángeles Cia Barrio</li>
+                        <li>• María Pomares Bernabeu</li>
+                        <li>• Vanesa María Castro Granell</li>
+                        <li style="margin-top: 10px; color: #666; font-weight: 600;">Servicio de Farmacia Hospitalaria - Hospital Marina Baixa</li>
+                    </ul>
+                </div>
+
+                <p style="font-style: italic; color: #666; border-top: 1px solid #eee; padding-top: 15px; margin-top: 20px; font-size: 0.85em;">
                     Cualquier forma de reproducción, distribución, comunicación pública o transformación de esta obra, sólo puede ser realizada con la autorización de sus titulares, salvo excepciones previstas por ley.
                 </p>
 
