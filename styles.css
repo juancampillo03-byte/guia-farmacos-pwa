@@ -7,22 +7,22 @@ body {
     padding: 0; 
     background-color: #f4f7f9; 
     color: #333;
-    overflow-x: hidden; /* Evita desplazamientos laterales raros */
+    overflow-x: hidden;
 }
 
 header {
     background-color: #007bff;
     color: white;
-    padding: 25px 15px; /* Más relleno para que sea más alta */
+    padding: 25px 15px;
     display: flex;
     align-items: center;
-    width: 100%; /* Cubre de lado a lado */
+    width: 100%;
     box-sizing: border-box;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 .menu-icon {
-    font-size: 35px; /* Icono más grande y fácil de tocar */
+    font-size: 35px;
     cursor: pointer;
     z-index: 10;
     margin-right: 10px;
@@ -31,20 +31,18 @@ header {
 .logo-container {
     flex-grow: 1;
     text-align: center;
-    padding-right: 20px; /* Compensa el espacio del icono */
+    padding-right: 20px;
 }
 
-/* Título Principal más Grande */
 header h1 { 
     margin: 0; 
-    font-size: 1.6em; /* Aumentado */
+    font-size: 1.6em;
     font-weight: 800;
     line-height: 1.1;
-    text-transform: uppercase; /* Da un aire más oficial */
+    text-transform: uppercase;
     letter-spacing: -0.5px;
 }
 
-/* Subtítulo */
 header h2 { 
     margin-top: 5px; 
     font-size: 0.95em; 
@@ -109,10 +107,10 @@ main {
 
 #search-input { 
     width: 100%; 
-    padding: 16px; /* Más grande para móviles */
+    padding: 16px;
     border-radius: 12px; 
     border: 2px solid #ddd; 
-    font-size: 18px; /* Texto de búsqueda más legible */
+    font-size: 18px;
     box-sizing: border-box; 
     margin-bottom: 20px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
@@ -135,7 +133,7 @@ main {
     color: #007bff; 
     font-weight: 800; 
     padding: 10px; 
-    font-size: 16px; /* Letras del índice más grandes */
+    font-size: 16px;
 }
 
 .result-button { 
@@ -153,7 +151,7 @@ main {
 }
 
 /* -------------------------------------- */
-/* 4. FICHA DEL FÁRMACO Y TABLA V.O.      */
+/* 4. FICHA DEL FÁRMACO Y DISEÑO DE LISTA */
 /* -------------------------------------- */
 .ficha { 
     background: white; 
@@ -167,7 +165,7 @@ main {
     margin-top: 0; 
     border-bottom: 3px solid #f0f0f0; 
     padding-bottom: 15px; 
-    font-size: 1.7em; /* Nombre del fármaco bien grande */
+    font-size: 1.7em;
     text-align: center;
 }
 
@@ -193,56 +191,42 @@ main {
     font-size: 1.2em;
 }
 
-/* MEJORA VISUAL DE LA TABLA */
-.tabla-vo-container { 
-    overflow-x: auto; 
-    margin-top: 20px; 
+/* NUEVO DISEÑO DE LISTADO POR TARJETAS (Sustituye a la tabla) */
+.lista-vo-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Espacio entre tarjetas */
+}
+
+.tarjeta-vo {
+    display: flex;
+    flex-direction: column; /* Nombre arriba, dosis abajo en móvil */
+    background: #fff;
+    padding: 16px;
     border-radius: 12px;
-    border: 1px solid #e0e6ed;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-left: 5px solid #007bff; /* Guía visual azul */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border-top: 1px solid #f0f0f0;
+    border-right: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
 }
 
-.tabla-vo { 
-    width: 100%; 
-    border-collapse: collapse; 
-    font-size: 15px;
-    background-color: white;
-}
-
-.tabla-vo th { 
-    background-color: #f8f9fa; 
-    color: #007bff;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.75em;
-    letter-spacing: 1px;
-    padding: 15px 12px;
-    border-bottom: 2px solid #007bff;
-    text-align: left;
-}
-
-.tabla-vo td { 
-    padding: 16px 12px; 
-    border-bottom: 1px solid #f1f3f5;
-    vertical-align: middle;
-}
-
-/* Columna Fármaco: Negrita y color oscuro */
-.tabla-vo td:first-child {
+.tarjeta-vo .nombre-farmaco {
     font-weight: 700;
     color: #2c3e50;
-    width: 45%;
+    font-size: 1.1em;
+    margin-bottom: 8px;
 }
 
-/* Columna Presentación: Azul técnico y tipografía clara */
-.tabla-vo td:last-child {
+.tarjeta-vo .dosis-presentacion {
+    font-family: 'SFMono-Regular', Consolas, monospace;
+    font-weight: 600;
     color: #0056b3;
-    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-    font-size: 0.9em;
-    background-color: #fcfdfe; /* Sutil destaque para la dosis */
-}
-
-/* Filas alternas (Zebra) */
-.tabla-vo tbody tr:nth-child(even) {
-    background-color: #f8f9fa;
+    background: #eef6ff; /* Fondo destacado azul suave */
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.95em;
+    display: inline-block;
+    align-self: flex-start; /* La etiqueta solo ocupa lo que mide el texto */
 }

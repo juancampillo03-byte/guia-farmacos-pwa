@@ -33,49 +33,45 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo(0,0);
     };
 
-    // --- FUNCIÓN 2: VER LA TABLA V.O. ---
+    // --- FUNCIÓN 2: VER LISTADO V.O. (FORMATO TARJETAS) ---
     btnVO.onclick = () => {
         sideMenu.style.width = "0"; 
         seccionBusqueda.style.display = "none"; 
         
         ficha.innerHTML = `
             <h2>Formas Parenterales por Vía Oral</h2>
-            <p style="font-size:0.8em; color:gray; text-align:center;">Presentaciones parenterales que pueden administrarse vía oral (bebibles)</p>
-            <div class="tabla-vo-container">
-                <table class="tabla-vo">
-                    <thead><tr><th>Fármaco</th><th>Presentación</th></tr></thead>
-                    <tbody>
-                        <tr><td>Acetilcisteína</td><td>amp 300 mg/3mL</td></tr>
-                        <tr><td>Ácido ascórbico</td><td>amp 1.000 mg/5 mL</td></tr>
-                        <tr><td>Ácido tranexámico</td><td>amp 500 mg/5 mL</td></tr>
-                        <tr><td>Atropina</td><td>amp 1 mg/1 mL</td></tr>
-                        <tr><td>Bicarbonato sódico</td><td>amp 8.4%, 1 M/10 mL</td></tr>
-                        <tr><td>Butilescopolamina</td><td>amp 20 mg/1 mL</td></tr>
-                        <tr><td>Butilescopolamina + metamizol</td><td>amp 20 mg+2,5g/5 mL</td></tr>
-                        <tr><td>Cafeína citrato</td><td>amp 20 mg/1 mL</td></tr>
-                        <tr><td>Cianocobalamina</td><td>amp 1 mg/2 mL</td></tr>
-                        <tr><td>Ciclofosfamida</td><td>vial 1 g</td></tr>
-                        <tr><td>Clonazepam</td><td>amp 1 mg/1 mL</td></tr>
-                        <tr><td>Cloruro sódico</td><td>amp 20% 10 mL</td></tr>
-                        <tr><td>Desferoxamina</td><td>vial 500 mg</td></tr>
-                        <tr><td>Dexametasona</td><td>amp 40 mg/5 mL y 4 mg/mL</td></tr>
-                        <tr><td>Diazepam</td><td>amp 10 mg/2 mL</td></tr>
-                        <tr><td>Digoxina</td><td>amp 0,5 mg/2 mL</td></tr>
-                        <tr><td>Fitomenadiona</td><td>amp 10 mg/1 mL</td></tr>
-                        <tr><td>Folinato cálcico</td><td>vial 350 mg</td></tr>
-                        <tr><td>Furosemida</td><td>amp 20 mg/2 mL y 250 mg/25 mL</td></tr>
-                        <tr><td>Hidralazina</td><td>amp 20 mg</td></tr>
-                        <tr><td>Hidrocortisona</td><td>vial 75 mg</td></tr>
-                        <tr><td>Ketamina</td><td>vial 500 mg/10 mL</td></tr>
-                        <tr><td>Labetalol</td><td>amp 100 mg/20 mL</td></tr>
-                        <tr><td>Magnesio sulfato</td><td>amp 1,5 g/10 mL</td></tr>
-                    </tbody>
-                </table>
+            <p style="font-size:0.85em; color:gray; text-align:center; margin-bottom:15px;">Presentaciones parenterales bebibles</p>
+            
+            <div class="lista-vo-container">
+                <div class="tarjeta-vo"><div class="nombre-farmaco">Acetilcisteína</div><div class="dosis-presentacion">amp 300 mg/3mL</div></div>
+                <div class="tarjeta-vo"><div class="nombre-farmaco">Ácido ascórbico</div><div class="dosis-presentacion">amp 1.000 mg/5 mL</div></div>
+                <div class="tarjeta-vo"><div class="nombre-farmaco">Ácido tranexámico</div><div class="dosis-presentacion">amp 500 mg/5 mL</div></div>
+                <div class="tarjeta-vo"><div class="nombre-farmaco">Atropina</div><div class="dosis-presentacion">amp 1 mg/1 mL</div></div>
+                <div class="tarjeta-vo"><div class="nombre-farmaco">Bicarbonato sódico</div><div class="dosis-presentacion">amp 8.4%, 1 M/10 mL</div></div>
+                <div class="tarjeta-vo"><div class="nombre-farmaco">Butilescopolamina</div><div class="dosis-presentacion">amp 20 mg/1 mL</div></div>
+                <div class="tarjeta-vo"><div class="nombre-farmaco">Butilescopolamina + metamizol</div><div class="dosis-presentacion">amp 20 mg+2,5g/5 mL</div></div>
+                <div class="tarjeta-vo"><div class="nombre-farmaco">Cafeína citrato</div><div class="dosis-presentacion">amp 20 mg/1 mL</div></div>
+                <div class="tarjeta-vo"><div class="nombre-farmaco">Cianocobalamina</div><div class="dosis-presentacion">amp 1 mg/2 mL</div></div>
+                <div class="tarjeta-vo"><div class="nombre-farmaco">Ciclofosfamida</div><div class="dosis-presentacion">vial 1 g</div></div>
+                <div class="tarjeta-vo"><div class="nombre-farmaco">Clonazepam</div><div class="dosis-presentacion">amp 1 mg/1 mL</div></div>
+                <div class="tarjeta-vo"><div class="nombre-farmaco">Cloruro sódico</div><div class="dosis-presentacion">amp 20% 10 mL</div></div>
+                <div class="tarjeta-vo"><div class="nombre-farmaco">Desferoxamina</div><div class="dosis-presentacion">vial 500 mg</div></div>
+                <div class="tarjeta-vo"><div class="nombre-farmaco">Dexametasona</div><div class="dosis-presentacion">amp 40 mg/5 mL y 4 mg/mL</div></div>
+                <div class="tarjeta-vo"><div class="nombre-farmaco">Diazepam</div><div class="dosis-presentacion">amp 10 mg/2 mL</div></div>
+                <div class="tarjeta-vo"><div class="nombre-farmaco">Digoxina</div><div class="dosis-presentacion">amp 0,5 mg/2 mL</div></div>
+                <div class="tarjeta-vo"><div class="nombre-farmaco">Fitomenadiona</div><div class="dosis-presentacion">amp 10 mg/1 mL</div></div>
+                <div class="tarjeta-vo"><div class="nombre-farmaco">Folinato cálcico</div><div class="dosis-presentacion">vial 350 mg</div></div>
+                <div class="tarjeta-vo"><div class="nombre-farmaco">Furosemida</div><div class="dosis-presentacion">amp 20 mg/2 mL y 250 mg/25 mL</div></div>
+                <div class="tarjeta-vo"><div class="nombre-farmaco">Hidralazina</div><div class="dosis-presentacion">amp 20 mg</div></div>
+                <div class="tarjeta-vo"><div class="nombre-farmaco">Hidrocortisona</div><div class="dosis-presentacion">vial 75 mg</div></div>
+                <div class="tarjeta-vo"><div class="nombre-farmaco">Ketamina</div><div class="dosis-presentacion">vial 500 mg/10 mL</div></div>
+                <div class="tarjeta-vo"><div class="nombre-farmaco">Labetalol</div><div class="dosis-presentacion">amp 100 mg/20 mL</div></div>
+                <div class="tarjeta-vo"><div class="nombre-farmaco">Magnesio sulfato</div><div class="dosis-presentacion">amp 1,5 g/10 mL</div></div>
             </div>`;
         window.scrollTo(0,0);
     };
 
-    // --- FUNCIÓN 3: VER AVISO LEGAL (CON LISTADO COMPLETO DE AUTORES) ---
+    // --- FUNCIÓN 3: VER AVISO LEGAL ---
     btnAviso.onclick = () => {
         sideMenu.style.width = "0"; 
         seccionBusqueda.style.display = "none"; 
