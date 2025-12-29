@@ -236,3 +236,50 @@ h3 {
     color: white;
     border-radius: 4px;
 }
+
+.special-actions {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.special-button {
+    background-color: #004a99;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 90%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.tabla-vo-container {
+    overflow-x: auto;
+    margin-top: 10px;
+}
+
+.tabla-vo {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    background: white;
+}
+
+.tabla-vo th, .tabla-vo td {
+    border: 1px solid #ddd;
+    padding: 12px 8px;
+    text-align: left;
+}
+
+.tabla-vo th {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.nota-guia {
+    font-style: italic;
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 10px;
+}
