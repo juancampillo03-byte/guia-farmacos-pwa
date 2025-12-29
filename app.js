@@ -6,19 +6,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const sideMenu = document.getElementById('side-menu');
     const openMenuBtn = document.getElementById('open-menu');
     const closeMenuBtn = document.getElementById('close-menu');
-    const btnVO = document.getElementById('btn-via-oral-menu');
     
+    // Elementos de navegación
     const seccionBusqueda = document.getElementById('seccion-busqueda');
     const btnIrBuscador = document.getElementById('btn-ir-buscador');
-    const btnAviso = document.getElementById('btn-aviso-legal');
+    const btnVO = document.getElementById('btn-via-oral-menu');
+    const btnAviso = document.getElementById('btn-aviso-legal'); // Aseguramos que esté aquí
 
     function norm(t) { return t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); }
 
-    // --- MANEJO DEL MENÚ ---
+    // --- MANEJO DEL MENÚ (ABRIR/CERRAR) ---
     openMenuBtn.onclick = () => { sideMenu.style.width = "280px"; };
     closeMenuBtn.onclick = () => { sideMenu.style.width = "0"; };
 
-    // --- FUNCIÓN PARA VOLVER AL BUSCADOR ---
+    // --- FUNCIÓN 1: VOLVER AL BUSCADOR ---
     btnIrBuscador.onclick = () => {
         sideMenu.style.width = "0"; 
         seccionBusqueda.style.display = "block"; 
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo(0,0);
     };
 
-    // --- FUNCIÓN PARA VER LA TABLA V.O. ---
+    // --- FUNCIÓN 2: VER LA TABLA V.O. ---
     btnVO.onclick = () => {
         sideMenu.style.width = "0"; 
         seccionBusqueda.style.display = "none"; 
@@ -74,13 +75,13 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo(0,0);
     };
 
-    // --- FUNCIÓN PARA EL AVISO LEGAL ---
+    // --- FUNCIÓN 3: VER AVISO LEGAL ---
     btnAviso.onclick = () => {
         sideMenu.style.width = "0"; 
         seccionBusqueda.style.display = "none"; 
         
         ficha.innerHTML = `
-            <div style="text-align: justify; line-height: 1.6; color: #333;">
+            <div style="text-align: justify; line-height: 1.6; color: #333; padding: 10px;">
                 <h2 style="color: #444; border-bottom: 2px solid #eee; padding-bottom: 10px; text-align: center;">Aviso Legal</h2>
                 <p>Los autores han hecho todos los esfuerzos posibles para asegurarse de que la información contenida en esta guía sea correcta y corresponde con la literatura médica y las autoridades sanitarias, en el momento de la publicación del libro.</p>
                 <p>Sin embargo, queremos advertir a los lectores que deben consultar las recomendaciones y las informaciones que, de forma periódica, proporcionan las autoridades sanitarias y los fabricantes de los medicamentos, y que no podemos hacernos responsables de las consecuencias que pudieran derivarse de cualquier error de texto que haya podido pasar inadvertido.</p>
@@ -94,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo(0,0);
     };
 
+    // --- LOGICA DE RENDERIZADO DE FÁRMACOS ---
     function renderDrugFicha(id) {
         const d = drugData[id];
         let protocolsHtml = "";
