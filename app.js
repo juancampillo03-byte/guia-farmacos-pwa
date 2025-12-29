@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Selectores principales
     const ficha = document.getElementById('ficha-farmaco');
     const input = document.getElementById('search-input'); 
     const results = document.getElementById('results-container');
@@ -7,20 +8,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const openMenuBtn = document.getElementById('open-menu');
     const closeMenuBtn = document.getElementById('close-menu');
     
-    // Elementos de navegación
+    // Selectores de navegación
     const seccionBusqueda = document.getElementById('seccion-busqueda');
     const btnIrBuscador = document.getElementById('btn-ir-buscador');
     const btnVO = document.getElementById('btn-via-oral-menu');
     const btnAviso = document.getElementById('btn-aviso-legal'); 
-    const btnAbreviaturas = document.getElementById('btn-abreviaturas');
+    const btnAbreviaturas = document.getElementById('btn-abreviaturas'); // Asegurar declaración
 
     function norm(t) { return t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); }
 
-    // --- MANEJO DEL MENÚ (ABRIR/CERRAR) ---
+    // --- MANEJO DEL MENÚ ---
     openMenuBtn.onclick = () => { sideMenu.style.width = "280px"; };
     closeMenuBtn.onclick = () => { sideMenu.style.width = "0"; };
 
-    // --- FUNCIÓN 1: VOLVER AL BUSCADOR ---
+    // --- NAVEGACIÓN: BUSCADOR ---
     btnIrBuscador.onclick = () => {
         sideMenu.style.width = "0"; 
         seccionBusqueda.style.display = "block"; 
@@ -34,15 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo(0,0);
     };
 
-    // --- FUNCIÓN 2: VER LISTADO V.O. (FORMATO TARJETAS) ---
+    // --- NAVEGACIÓN: VÍA ORAL ---
     btnVO.onclick = () => {
         sideMenu.style.width = "0"; 
         seccionBusqueda.style.display = "none"; 
-        
         ficha.innerHTML = `
             <h2>Formas Parenterales por Vía Oral</h2>
-            <p style="font-size:0.85em; color:gray; text-align:center; margin-bottom:15px;">Presentaciones parenterales que pueden administrarse por vía oral (bebibles)</p>
-            
+            <p style="font-size:0.85em; color:gray; text-align:center; margin-bottom:15px;">Presentaciones bebibles</p>
             <div class="lista-vo-container">
                 <div class="tarjeta-vo"><div class="nombre-farmaco">Acetilcisteína</div><div class="dosis-presentacion">amp 300 mg/3mL</div></div>
                 <div class="tarjeta-vo"><div class="nombre-farmaco">Ácido ascórbico</div><div class="dosis-presentacion">amp 1.000 mg/5 mL</div></div>
@@ -72,56 +71,39 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo(0,0);
     };
 
-    // --- FUNCIÓN 3: VER AVISO LEGAL ---
+    // --- NAVEGACIÓN: AVISO LEGAL ---
     btnAviso.onclick = () => {
         sideMenu.style.width = "0"; 
         seccionBusqueda.style.display = "none"; 
-        
         ficha.innerHTML = `
             <div style="text-align: justify; line-height: 1.6; color: #333; padding: 10px;">
                 <h2 style="color: #444; border-bottom: 2px solid #eee; padding-bottom: 10px; text-align: center;">Aviso Legal</h2>
                 <p>Los autores han hecho todos los esfuerzos posibles para asegurarse de que la información contenida en esta guía sea correcta y corresponde con la literatura médica y las autoridades sanitarias, en el momento de la publicación de la guía.</p>
                 <p>Sin embargo, queremos advertir a los lectores que deben consultar las recomendaciones y las informaciones que, de forma periódica, proporcionan las autoridades sanitarias y los fabricantes de los medicamentos, y que no podemos hacernos responsables de las consecuencias que pudieran derivarse de cualquier error de texto que haya podido pasar inadvertido.</p>
                 <p>Finalmente, cuando para el manejo o tratamiento de una determinada situación haya más de una opción admitida, las recomendaciones de la guía representan exclusivamente las preferencias de los autores, sin que ello indique que otras opciones no puedan ser igualmente eficaces o recomendables.</p>
-                
                 <div style="margin-top: 25px; border-top: 1px solid #eee; padding-top: 15px; background: #fff;">
                     <h3 style="font-size: 1.1em; color: #007bff; margin-bottom: 10px;">Autores:</h3>
                     <ul style="list-style: none; padding-left: 5px; font-size: 0.95em; color: #444; line-height: 1.5;">
-                        <li>• Sarah Myles Velasco</li>
-                        <li>• Juan Campillo López</li>
-                        <li>• Gregorio Sanz Tamargo</li>
-                        <li>• José Marco del Río</li>
-                        <li>• Rosa María Fuster Ruiz de Apodaca</li>
-                        <li>• Iván Beltrá Picó</li>
-                        <li>• Mª Ángeles Cia Barrio</li>
-                        <li>• María Pomares Bernabeu</li>
-                        <li>• Vanesa María Castro Granell</li>
+                        <li>• Sarah Myles Velasco</li><li>• Juan Campillo López</li><li>• Gregorio Sanz Tamargo</li><li>• José Marco del Río</li><li>• Rosa María Fuster Ruiz de Apodaca</li><li>• Iván Beltrá Picó</li><li>• Mª Ángeles Cia Barrio</li><li>• María Pomares Bernabeu</li><li>• Vanesa María Castro Granell</li>
                         <li style="margin-top: 10px; color: #666; font-weight: 600;">Servicio de Farmacia Hospitalaria - Hospital Marina Baixa</li>
                     </ul>
                 </div>
-
                 <p style="font-style: italic; color: #666; border-top: 1px solid #eee; padding-top: 15px; margin-top: 20px; font-size: 0.85em;">
                     Cualquier forma de reproducción, distribución, comunicación pública o transformación de esta obra, sólo puede ser realizada con la autorización de sus titulares, salvo excepciones previstas por ley.
                 </p>
-
                 <div style="margin-top: 40px; padding: 20px; background: #f1f3f5; border-radius: 10px; font-size: 0.85em; color: #666; border: 1px solid #e9ecef; text-align: center;">
-                    <strong>Servicio de Farmacia Hospitalaria</strong><br>
-                    Hospital Marina Baixa<br>
-                    <em>Guía de Administración Parenteral - Edición 2024</em>
+                    <strong>Servicio de Farmacia Hospitalaria</strong><br>Hospital Marina Baixa<br><em>Edición 2024</em>
                 </div>
             </div>`;
         window.scrollTo(0,0);
     };
 
-    // --- FUNCIÓN 4: ÍNDICE DE ABREVIATURAS (COMPLETO PÁG. 9) ---
+    // --- NAVEGACIÓN: ABREVIATURAS (PAG 9) ---
     btnAbreviaturas.onclick = () => {
         sideMenu.style.width = "0"; 
         seccionBusqueda.style.display = "none"; 
-        
         ficha.innerHTML = `
             <h2>Índice de Abreviaturas</h2>
-            <p style="font-size:0.85em; color:gray; text-align:center; margin-bottom:20px;">Terminología técnica de la guía</p>
-            
             <div style="background: white; padding: 10px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
                 <div class="abreviatura-fila"><span class="abr-sigla">adm.</span><span class="abr-significado">Administración</span></div>
                 <div class="abreviatura-fila"><span class="abr-sigla">amp</span><span class="abr-significado">Ampolla</span></div>
@@ -150,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo(0,0);
     };
 
-    // --- LOGICA DE RENDERIZADO DE FÁRMACOS ---
+    // --- LÓGICA DE FÁRMACOS ---
     function renderDrugFicha(id) {
         const d = drugData[id];
         let protocolsHtml = "";
@@ -173,7 +155,6 @@ document.addEventListener('DOMContentLoaded', () => {
         let html = "";
         const fNorm = norm(filter);
         if(filter !== "") ficha.innerHTML = '<p style="text-align:center; color:gray;">Resultados...</p>';
-        
         const sorted = Object.entries(drugData).sort(([,a],[,b]) => norm(a.name).localeCompare(norm(b.name)));
         for (const [id, d] of sorted) {
             const nNorm = norm(d.name);
