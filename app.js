@@ -8,33 +8,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeMenuBtn = document.getElementById('close-menu');
     const btnVO = document.getElementById('btn-via-oral-menu');
     
-    // Elementos para control de vista
     const seccionBusqueda = document.getElementById('seccion-busqueda');
     const btnIrBuscador = document.getElementById('btn-ir-buscador');
 
     function norm(t) { return t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); }
 
     // --- MANEJO DEL MENÚ ---
-    openMenuBtn.onclick = () => sideMenu.style.width = "280px";
-    closeMenuBtn.onclick = () => sideMenu.style.width = "0";
+    openMenuBtn.onclick = () => { sideMenu.style.width = "280px"; };
+    closeMenuBtn.onclick = () => { sideMenu.style.width = "0"; };
 
-    // --- MODO: VOLVER AL BUSCADOR ---
+    // --- FUNCIÓN PARA VOLVER AL BUSCADOR ---
     btnIrBuscador.onclick = () => {
-        sideMenu.style.width = "0"; 
-        seccionBusqueda.style.display = "block"; // Mostramos buscador e índice
+        sideMenu.style.width = "0"; // Cerramos menú
+        seccionBusqueda.style.display = "block"; // Mostramos buscador
         input.value = ""; 
         results.innerHTML = ""; 
-        buildIndex(); // Mostramos de nuevo las letras
+        buildIndex(); 
         ficha.innerHTML = `
             <p style="text-align: center; color: #555;">Selecciona un fármaco o usa el menú lateral.</p>
             <p style="text-align: center; color: #555;">Última actualización online: 29/12/2025</p>
         `;
     };
 
-    // --- MODO: TABLA PÁGINA 218 ---
+    // --- FUNCIÓN PARA VER LA TABLA ---
     btnVO.onclick = () => {
-        sideMenu.style.width = "0"; 
-        seccionBusqueda.style.display = "none"; // OCULTAMOS BUSCADOR E ÍNDICE
+        sideMenu.style.width = "0"; // Cerramos menú
+        seccionBusqueda.style.display = "none"; // OCULTAMOS TODO EL BLOQUE DE BÚSQUEDA
         
         ficha.innerHTML = `
             <h2>Formas Parenterales por Vía Oral</h2>
@@ -112,10 +111,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function buildIndex() {
+        if (!index) return;
         const lets = [...new Set(Object.values(drugData).map(d => norm(d.name[0]).toUpperCase()))].sort();
         index.innerHTML = lets.map(l => `<button class="index-button">${l}</button>`).join('');
         document.querySelectorAll('.index-button').forEach(b => {
-            b.onclick = () => { input.value = ""; renderResults(b.innerText, true); };
+            b.onclick = () => { 
+                input.value = ""; 
+                renderResults(b.innerText, true); 
+            };
         });
     }
 
