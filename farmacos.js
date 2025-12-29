@@ -2085,7 +2085,7 @@ const drugData = {
         ]
     },
     'zoledronico': {
-        name: 'ÁCIDO ZOLEDRÓNICO',
+        name: 'ZOLEDRÓNICO, ÁCIDO',
         reconstitution: { 
             presentation: 'Zometa® vial 4 mg/5 mL y Aclasta® frasco 5 mg/100 mL', 
             method: 'Vial: diluir en 100 mL de SF o SG5% exclusivamente. Frasco: listo para usar.', 
