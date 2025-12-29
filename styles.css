@@ -163,7 +163,7 @@ main { padding: 15px; }
 
 .protocolo-box.verde, .protocolo-box.valido { 
     border-left-color: #40c057; 
-    background-color: #dcfce7 !important; 
+    background-color: #b6f0ca !important; 
 }
 .protocolo-box.critico, .protocolo-box.atencion { 
     border-left-color: #fa5252; 
