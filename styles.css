@@ -163,15 +163,15 @@ main { padding: 15px; }
 
 .protocolo-box.verde, .protocolo-box.valido { 
     border-left-color: #40c057; 
-    background-color: #f1fdf3 !important; 
+    background-color: #dcfce7 !important; 
 }
 .protocolo-box.critico, .protocolo-box.atencion { 
     border-left-color: #fa5252; 
-    background-color: #fff5f5 !important; 
+    background-color: #ffe3e3 !important; 
 }
 .protocolo-box.invalido, .protocolo-box.precaucion { 
     border-left-color: #fcc419; 
-    background-color: #fff9db !important; 
+    background-color: #fff3bf !important; 
 }
 
 .seccion-reconstitución { 
